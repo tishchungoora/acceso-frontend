@@ -35,16 +35,17 @@ export default class PecsContainer extends Component {
     const { categories, cards } = this.state;
 
     return (
-      <div>
-        <div className="col p-3">
+      <div className="row">
+        <div className="col-sm-2 p-3">
           <CategorySelector categories={categories} />
         </div>
-        <div className="col p-3">
-          <SearchBar />
-        </div>
-
-        <div>
-          <CardCollection cards={cards} />
+        <div className="col-sm-10 p-3">
+          <div className="row justify-content-center">
+            <SearchBar />
+          </div>
+          <div className="row">
+            <CardCollection cards={cards} />
+          </div>
         </div>
       </div>
     );

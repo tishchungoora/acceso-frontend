@@ -41,3 +41,20 @@ footer a:hover {
 footer a:visited {
   color: lightgrey;
 }
+
+.card {
+  max-width: 20em;
+  font-size: 0.75em;
+}
+
+.card img {
+  outline: 5px solid lightgrey;
+  outline-offset: -5px;
+}
+
+.CardCollection {
+  max-height: 1080px;
+  overflow: auto;
+  margin: 50px;
+  background-color: lightgrey;
+}

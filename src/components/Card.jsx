@@ -14,7 +14,7 @@ export default class Card extends Component {
 
         <img
           className="card-img-top"
-          src="{card.image_url}"
+          src={card.image_url}
           alt={card.title}
         />
         <div className="card-body">

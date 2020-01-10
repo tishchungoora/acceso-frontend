@@ -6,7 +6,7 @@ export default class CardCollection extends Component {
     const { cards } = this.props;
 
     return (
-      <div className="row justify-content-center">
+      <div className="CardCollection row justify-content-center">
         {cards.map(card => (
           <Card key={card.id} card={card} />
         ))}
