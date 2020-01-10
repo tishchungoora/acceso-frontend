@@ -25,7 +25,8 @@ export default class PecsContainer extends Component {
   setCards = () => {
     API.fetchCards().then(data =>
       this.setState({
-        displayedCards: data.sort((a, b) => a.title.localeCompare(b.title)), cards: data
+        displayedCards: data.sort((a, b) => a.title.localeCompare(b.title)),
+        cards: data
       })
     );
   };

@@ -54,7 +54,7 @@ footer a:visited {
 
 .CardCollection {
   max-height: 1080px;
-  overflow: auto;
+  overflow-y: auto;
   margin: 50px;
   background-color: lightskyblue;
 }
