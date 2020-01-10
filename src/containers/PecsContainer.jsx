@@ -10,6 +10,7 @@ export default class PecsContainer extends Component {
     categories: [],
     subcategories: [],
     searchTerm: "",
+    displayedCards: [],
     cards: []
   };
 
@@ -24,7 +25,7 @@ export default class PecsContainer extends Component {
   setCards = () => {
     API.fetchCards().then(data =>
       this.setState({
-        cards: data.sort((a, b) => a.title.localeCompare(b.title))
+        displayedCards: data.sort((a, b) => a.title.localeCompare(b.title)), cards: data
       })
     );
   };
@@ -54,11 +55,11 @@ export default class PecsContainer extends Component {
     const newCards = [...this.state.cards];
 
     if (this.state.searchTerm === "") {
-      this.setState({ cards: newCards });
+      this.setState({ displayedCards: newCards });
     } else {
       event.preventDefault();
       this.setState({
-        cards: newCards.filter(
+        displayedCards: newCards.filter(
           c =>
             c.title.toLowerCase().includes(this.state.searchTerm) ||
             c.category.name.toLowerCase().includes(this.state.searchTerm)
@@ -70,12 +71,13 @@ export default class PecsContainer extends Component {
   handleSearchClear = event => {
     event.preventDefault();
     this.setState({
-      searchTerm: ""
-    })
-  }
+      searchTerm: "",
+      displayedCards: this.state.cards
+    });
+  };
 
   render() {
-    const { categories, subcategories, cards } = this.state;
+    const { categories, subcategories, displayedCards } = this.state;
     const {
       handleCategoryChange,
       handleSearchInputChange,
@@ -101,7 +103,7 @@ export default class PecsContainer extends Component {
             />
           </div>
           <div className="row">
-            <CardCollection cards={cards} />
+            <CardCollection displayedCards={displayedCards} />
           </div>
         </div>
       </div>

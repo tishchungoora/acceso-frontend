@@ -2,7 +2,11 @@ import React, { Component } from "react";
 
 export default class SearchBar extends Component {
   render() {
-    const { handleSearchInputChange, handleSearchSubmit, handleSearchClear } = this.props;
+    const {
+      handleSearchInputChange,
+      handleSearchSubmit,
+      handleSearchClear
+    } = this.props;
 
     return (
       <div>
@@ -18,7 +22,11 @@ export default class SearchBar extends Component {
           <button className="btn btn-primary ml-2" type="submit">
             Search
           </button>
-          <button className="btn btn-primary ml-2" type="submit" onClick={handleSearchClear}>
+          <button
+            className="btn btn-primary ml-2"
+            type="submit"
+            onClick={handleSearchClear}
+          >
             Clear
           </button>
         </form>
