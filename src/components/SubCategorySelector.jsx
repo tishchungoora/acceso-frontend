@@ -5,10 +5,9 @@ export default class SubCategorySelector extends Component {
     const { subcategories, filterCards } = this.props;
 
     return (
-      <div>
-        <h5 className="pb-2">Now select a subcategory:</h5>
+      <div className="SubCategorySelector col-sm-3">
         <select className="form-control" id="subCategorySelector" onChange={event => filterCards(event.target.value)}>
-          <option value="">Choose...</option>
+          <option value="">Choose subcategory...</option>
           {subcategories.map(subcat => (
             <option key={subcat.id} value={subcat.name}>
               {subcat.name}

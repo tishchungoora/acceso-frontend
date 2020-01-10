@@ -92,7 +92,12 @@ export default class PecsContainer extends Component {
   };
 
   render() {
-    const { categories, subcategories, displayedCards, searchTerm } = this.state;
+    const {
+      categories,
+      subcategories,
+      displayedCards,
+      searchTerm
+    } = this.state;
     const {
       handleCategoryChange,
       filterCards,
@@ -102,8 +107,16 @@ export default class PecsContainer extends Component {
     } = this;
 
     return (
-      <div className="row">
-        <div className="col-sm-2 p-3">
+      <div className="PecsContainer container-fluid col-sm-10">
+        <div className="row justify-content-center">
+          <SearchBar
+            handleSearchInputChange={handleSearchInputChange}
+            handleSearchSubmit={handleSearchSubmit}
+            handleSearchClear={handleSearchClear}
+            searchTerm={searchTerm}
+          />
+        </div>
+        <div className="row justify-content-center">
           <CategorySelector
             categories={categories}
             handleCategoryChange={handleCategoryChange}
@@ -113,18 +126,8 @@ export default class PecsContainer extends Component {
             filterCards={filterCards}
           />
         </div>
-        <div className="col-sm-10 p-3">
-          <div className="row justify-content-center">
-            <SearchBar
-              handleSearchInputChange={handleSearchInputChange}
-              handleSearchSubmit={handleSearchSubmit}
-              handleSearchClear={handleSearchClear}
-              searchTerm={searchTerm}
-            />
-          </div>
-          <div className="row">
-            <CardCollection displayedCards={displayedCards} />
-          </div>
+        <div className="row justify-content-center">
+          <CardCollection displayedCards={displayedCards} />
         </div>
       </div>
     );

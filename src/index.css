@@ -7,16 +7,17 @@ body > #root > div:not(#footerDiv) {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* home page banner */
+
 #banner {
-  background-image: url('./assets/banner.png');
+  background-image: url("./assets/banner.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -42,6 +43,8 @@ footer a:visited {
   color: lightgrey;
 }
 
+/* cards */
+
 .card {
   max-width: 20em;
   font-size: 0.75em;
@@ -54,7 +57,8 @@ footer a:visited {
 
 .CardCollection {
   max-height: 1080px;
-  overflow-y: auto;
-  margin: 50px;
+  overflow: auto;
+  margin: 3em;
+  padding: 2em;
   background-color: lightskyblue;
 }

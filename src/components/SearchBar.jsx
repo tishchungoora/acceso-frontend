@@ -10,22 +10,21 @@ export default class SearchBar extends Component {
     } = this.props;
 
     return (
-      <div>
-        <h5 className="pb-2">Enter a keyword:</h5>
-        <form className="form-inline" onSubmit={handleSearchSubmit}>
+      <div className="SearchBar">
+        <form className="form-inline justify-content-center" onSubmit={handleSearchSubmit}>
           <input
-            className="form-control"
+            className="form-control m-2"
             type="text"
             placeholder="Search for..."
             aria-label="Search"
             onChange={handleSearchInputChange}
             value={searchTerm}
           />
-          <button className="btn btn-primary ml-2" type="submit">
+          <button className="btn btn-primary m-2" type="submit">
             Search
           </button>
           <button
-            className="btn btn-primary ml-2"
+            className="btn btn-primary m-2"
             type="submit"
             onClick={handleSearchClear}
           >
