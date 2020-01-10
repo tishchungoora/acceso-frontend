@@ -44,6 +44,20 @@ export default class PecsContainer extends Component {
       this.setState({
         subcategories: subcats.sort((a, b) => a.name.localeCompare(b.name))
       });
+    } else {
+      this.setState({
+        displayedCards: this.state.cards
+      })
+    }
+  };
+
+  filterCards = category => {
+    if (category !== "") {
+      this.setState({
+        displayedCards: this.state.cards.filter(
+          c => c.category.name === category
+        )
+      });
     }
   };
 
@@ -81,6 +95,7 @@ export default class PecsContainer extends Component {
     const { categories, subcategories, displayedCards } = this.state;
     const {
       handleCategoryChange,
+      filterCards,
       handleSearchInputChange,
       handleSearchSubmit,
       handleSearchClear
@@ -93,7 +108,10 @@ export default class PecsContainer extends Component {
             categories={categories}
             handleCategoryChange={handleCategoryChange}
           />
-          <SubCategorySelector subcategories={subcategories} />
+          <SubCategorySelector
+            subcategories={subcategories}
+            filterCards={filterCards}
+          />
         </div>
         <div className="col-sm-10 p-3">
           <div className="row justify-content-center">
