@@ -5,7 +5,8 @@ export default class SearchBar extends Component {
     const {
       handleSearchInputChange,
       handleSearchSubmit,
-      handleSearchClear
+      handleSearchClear,
+      searchTerm
     } = this.props;
 
     return (
@@ -18,6 +19,7 @@ export default class SearchBar extends Component {
             placeholder="Search for..."
             aria-label="Search"
             onChange={handleSearchInputChange}
+            value={searchTerm}
           />
           <button className="btn btn-primary ml-2" type="submit">
             Search

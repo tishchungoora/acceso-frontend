@@ -46,8 +46,9 @@ export default class PecsContainer extends Component {
       });
     } else {
       this.setState({
-        displayedCards: this.state.cards
-      })
+        displayedCards: this.state.cards,
+        subcategories: []
+      });
     }
   };
 
@@ -67,14 +68,13 @@ export default class PecsContainer extends Component {
     });
 
   handleSearchSubmit = event => {
-    const newCards = [...this.state.cards];
+    event.preventDefault();
 
     if (this.state.searchTerm === "") {
-      this.setState({ displayedCards: newCards });
+      this.setState({ displayedCards: this.state.cards });
     } else {
-      event.preventDefault();
       this.setState({
-        displayedCards: newCards.filter(
+        displayedCards: this.state.cards.filter(
           c =>
             c.title.toLowerCase().includes(this.state.searchTerm) ||
             c.category.name.toLowerCase().includes(this.state.searchTerm)
@@ -92,7 +92,7 @@ export default class PecsContainer extends Component {
   };
 
   render() {
-    const { categories, subcategories, displayedCards } = this.state;
+    const { categories, subcategories, displayedCards, searchTerm } = this.state;
     const {
       handleCategoryChange,
       filterCards,
@@ -119,6 +119,7 @@ export default class PecsContainer extends Component {
               handleSearchInputChange={handleSearchInputChange}
               handleSearchSubmit={handleSearchSubmit}
               handleSearchClear={handleSearchClear}
+              searchTerm={searchTerm}
             />
           </div>
           <div className="row">
