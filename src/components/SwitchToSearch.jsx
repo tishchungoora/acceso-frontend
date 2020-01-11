@@ -5,8 +5,10 @@ export default class SwitchToSearch extends Component {
     const { methodChange } = this.props;
 
     return (
-      <div className="SwitchToSearch">
-        <button type="button" class="btn btn-link" onClick={methodChange}>... or search</button>
+      <div className="SwitchToSearch m-2">
+        <button type="button" className="btn btn-link" onClick={methodChange}>
+          ... or search
+        </button>
       </div>
     );
   }

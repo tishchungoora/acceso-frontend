@@ -32,8 +32,8 @@ export default class SearchBar extends Component {
           >
             Clear
           </button>
-        </form>
         <SwitchToCategory methodChange={methodChange} />
+        </form>
       </div>
     );
   }

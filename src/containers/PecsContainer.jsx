@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import CardCollection from "../components/CardCollection";
 import SearchBar from "../components/SearchBar";
-
 import CategorySelector from "../components/CategorySelector";
 import SubCategorySelector from "../components/SubCategorySelector";
 import SwitchToSearch from "../components/SwitchToSearch";
@@ -134,7 +133,8 @@ export default class PecsContainer extends Component {
             />
             <SubCategorySelector
               subcategories={subcategories}
-              filterCards={filterCards} />
+              filterCards={filterCards}
+            />
             <SwitchToSearch methodChange={methodChange} />
           </div>
         )}

@@ -5,7 +5,7 @@ export default class CategorySelector extends Component {
     const { categories, handleCategoryChange } = this.props;
 
     return (
-      <div className="CategorySelector col-sm-3">
+      <div className="CategorySelector col-sm-3 m-2">
         <select
           className="form-control"
           id="parentCategorySelector"

@@ -5,8 +5,10 @@ export default class SwitchToCategory extends Component {
     const { methodChange } = this.props;
 
     return (
-      <div className="SwitchToCategory row justify-content-center">
-        <button type="button" class="btn btn-link" onClick={methodChange}>... or filter by category</button>
+      <div className="SwitchToCategory">
+        <button type="button" className="btn btn-link" onClick={methodChange}>
+          ... or filter by category
+        </button>
       </div>
     );
   }
