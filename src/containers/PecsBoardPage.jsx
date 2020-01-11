@@ -12,7 +12,8 @@ export default class PecsBoardPage extends Component {
     subcategories: [],
     searchTerm: "",
     methodSwitch: false,
-    cardsOnBoard: []
+    cardsOnBoard: [],
+    played: false
   };
 
   setCategories = () => {
@@ -102,11 +103,17 @@ export default class PecsBoardPage extends Component {
     });
   };
 
-  composePhrase = () => {
+  playVoice = () => {
     let wordSet = this.state.cardsOnBoard
       .map(card => card.title)
       .join("--------");
     window.responsiveVoice.speak(wordSet);
+    this.setState({ played: true });
+  };
+
+  stopVoice = () => {
+    window.responsiveVoice.cancel();
+    this.setState({ played: false });
   };
 
   render() {
@@ -116,7 +123,8 @@ export default class PecsBoardPage extends Component {
       displayedCards,
       searchTerm,
       methodSwitch,
-      cardsOnBoard
+      cardsOnBoard,
+      played
     } = this.state;
     const {
       handleCategoryChange,
@@ -126,7 +134,8 @@ export default class PecsBoardPage extends Component {
       handleSearchClear,
       methodChange,
       selectCard,
-      composePhrase
+      playVoice,
+      stopVoice
     } = this;
 
     return (
@@ -135,7 +144,7 @@ export default class PecsBoardPage extends Component {
           <PecsBoard cardsOnBoard={cardsOnBoard} />
         </div>
         <div>
-          <Player composePhrase={composePhrase} />
+          <Player playVoice={playVoice} stopVoice={stopVoice} played={played} />
         </div>
         <hr className="mb-5" />
         <div>

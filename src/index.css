@@ -14,7 +14,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 { font-family: "Love Ya Like A Sister" }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Love Ya Like A Sister";
+}
 
 /* home page banner */
 
@@ -69,6 +76,7 @@ footer a:visited {
   height: 3em;
   width: 3em;
   border-radius: 50%;
+  padding-top: 12px;
 }
 
 /* board */
@@ -76,4 +84,12 @@ footer a:visited {
 .PecsBoardArea {
   min-height: 500px;
   background-color: rgb(243, 212, 87);
+}
+
+.Player button {
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+  padding-top: 12px;
+  padding-left: 18px;
 }

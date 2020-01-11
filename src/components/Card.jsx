@@ -6,15 +6,9 @@ export default class Card extends Component {
 
     return (
       <div className="card m-3 shadow">
-        <ul className="list-group list-group-flush">
-          <li className="list-group-item">
-            <em>Category: {card.category.name}</em>
-          </li>
-        </ul>
-
         <img className="card-img-top" src={card.image_url} alt={card.title} />
         <div className="card-body text-center">
-          <button className="btn btn-warning" onClick={() => selectCard(card)}>
+          <button className="btn btn-warning btn-lg" onClick={() => selectCard(card)}>
             <span className="oi oi-plus"></span>
           </button>
         </div>
