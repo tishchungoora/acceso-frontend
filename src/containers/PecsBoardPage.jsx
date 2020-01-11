@@ -110,8 +110,12 @@ export default class PecsBoardPage extends Component {
   };
 
   removeCard = card => {
-    const cardsOnBoard = this.state.cardsOnBoard.filter(c => c.id !== card.id)
-    this.setState({ cardsOnBoard })
+    const cardsOnBoard = this.state.cardsOnBoard.filter(c => c.id !== card.id);
+    this.setState({ cardsOnBoard });
+  };
+
+  resetBoard = () => {
+    this.setState({ cardsOnBoard: [] });
   };
 
   playVoice = () => {
@@ -147,13 +151,18 @@ export default class PecsBoardPage extends Component {
       selectCard,
       playVoice,
       stopVoice,
-      removeCard
+      removeCard,
+      resetBoard
     } = this;
 
     return (
       <div className="PecsBoardPage container-fluid">
         <div className="PecsBoardArea row justify-content-center pt-3 mb-3">
-          <PecsBoard cardsOnBoard={cardsOnBoard} removeCard={removeCard} />
+          <PecsBoard
+            cardsOnBoard={cardsOnBoard}
+            removeCard={removeCard}
+            resetBoard={resetBoard}
+          />
         </div>
         <div>
           <Player playVoice={playVoice} stopVoice={stopVoice} played={played} />

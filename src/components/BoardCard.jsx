@@ -8,7 +8,10 @@ export default class BoardCard extends Component {
       <div className="BoardCard card m-3 shadow">
         <img className="card-img-top" src={card.image_url} alt={card.title} />
         <div className="card-body text-center">
-          <button className="btn btn-danger btn-lg" onClick={() => removeCard(card)}>
+          <button
+            className="btn btn-danger btn-lg"
+            onClick={() => removeCard(card)}
+          >
             <span className="oi oi-minus"></span>
           </button>
         </div>

@@ -3,7 +3,7 @@ import BoardCard from "../components/BoardCard";
 
 export default class PecsBoard extends Component {
   render() {
-    const { cardsOnBoard, removeCard } = this.props;
+    const { cardsOnBoard, removeCard, resetBoard } = this.props;
 
     return (
       <div className="PecsBoard">
@@ -11,8 +11,15 @@ export default class PecsBoard extends Component {
           <h1>PECS board</h1>
         </div>
         <div className="row justify-content-center">
+          <button className="btn btn-danger" onClick={() => resetBoard()}>Reset board</button>
+        </div>
+        <div className="row justify-content-center">
           {cardsOnBoard.map((card, index) => (
-            <BoardCard key={card.id+index} card={card} removeCard={removeCard} />
+            <BoardCard
+              key={card.id + index}
+              card={card}
+              removeCard={removeCard}
+            />
           ))}
         </div>
       </div>
