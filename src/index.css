@@ -70,3 +70,10 @@ footer a:visited {
   width: 3em;
   border-radius: 50%;
 }
+
+/* board */
+
+.PecsBoardArea {
+  min-height: 500px;
+  background-color: rgb(243, 212, 87);
+}

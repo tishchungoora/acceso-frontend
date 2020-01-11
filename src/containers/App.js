@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Home from "../containers/Home";
-import PecsBoard from "../containers/PecsBoard";
+import PecsBoardPage from "../containers/PecsBoardPage";
 
 export default class App extends Component {
   render() {
@@ -12,7 +12,7 @@ export default class App extends Component {
         <div className="App">
           <NavBar />
           <Route exact path="/" component={Home} />
-          <Route exact path="/pecs-board" component={PecsBoard} />
+          <Route exact path="/pecs-board" component={PecsBoardPage} />
           <Footer />
         </div>
       </Router>

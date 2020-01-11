@@ -6,10 +6,17 @@ export default class CardCollection extends Component {
     const { displayedCards } = this.props;
 
     return (
-      <div className="CardCollection row justify-content-center">
+      <div className="CardCollection">
+        <div className="row justify-content-center">
+          
+        <h1>PECS cards</h1>
+        </div>
+        <div className="row justify-content-center">
+
         {displayedCards.map(card => (
           <Card key={card.id} card={card} />
         ))}
+        </div>
       </div>
     );
   }
