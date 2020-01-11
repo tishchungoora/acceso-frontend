@@ -98,9 +98,20 @@ export default class PecsBoardPage extends Component {
   };
 
   selectCard = card => {
-    this.setState({
-      cardsOnBoard: [...this.state.cardsOnBoard, card]
-    });
+    if (this.state.cardsOnBoard.length < 6) {
+      this.setState({
+        cardsOnBoard: [...this.state.cardsOnBoard, card]
+      });
+    } else {
+      alert(
+        "A PECS board can have a maximum of 6 cards on it at a time. This is so that information is exchanged as efficiently as possible, especially to non-verbal individuals with autism."
+      );
+    }
+  };
+
+  removeCard = card => {
+    const cardsOnBoard = this.state.cardsOnBoard.filter(c => c.id !== card.id)
+    this.setState({ cardsOnBoard })
   };
 
   playVoice = () => {
@@ -135,13 +146,14 @@ export default class PecsBoardPage extends Component {
       methodChange,
       selectCard,
       playVoice,
-      stopVoice
+      stopVoice,
+      removeCard
     } = this;
 
     return (
       <div className="PecsBoardPage container-fluid">
         <div className="PecsBoardArea row justify-content-center pt-3 mb-3">
-          <PecsBoard cardsOnBoard={cardsOnBoard} />
+          <PecsBoard cardsOnBoard={cardsOnBoard} removeCard={removeCard} />
         </div>
         <div>
           <Player playVoice={playVoice} stopVoice={stopVoice} played={played} />
