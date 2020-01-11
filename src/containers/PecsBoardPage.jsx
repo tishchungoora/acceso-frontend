@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PecsContainer from "./PecsContainer";
 import PecsBoard from "./PecsBoard";
-import Play from "../components/Play";
+import Player from "../components/Player";
 import API from "../adapters/API";
 
 export default class PecsBoardPage extends Component {
@@ -98,8 +98,15 @@ export default class PecsBoardPage extends Component {
 
   selectCard = card => {
     this.setState({
-      cardsOnBoard: [card, ...this.state.cardsOnBoard]
-    })
+      cardsOnBoard: [...this.state.cardsOnBoard, card]
+    });
+  };
+
+  composePhrase = () => {
+    let wordSet = this.state.cardsOnBoard
+      .map(card => card.title)
+      .join("--------");
+    window.responsiveVoice.speak(wordSet);
   };
 
   render() {
@@ -118,16 +125,17 @@ export default class PecsBoardPage extends Component {
       handleSearchSubmit,
       handleSearchClear,
       methodChange,
-      selectCard
+      selectCard,
+      composePhrase
     } = this;
 
     return (
       <div className="PecsBoardPage container-fluid">
         <div className="PecsBoardArea row justify-content-center pt-3 mb-3">
-            <PecsBoard cardsOnBoard={cardsOnBoard} />
+          <PecsBoard cardsOnBoard={cardsOnBoard} />
         </div>
         <div>
-          <Play />
+          <Player composePhrase={composePhrase} />
         </div>
         <hr className="mb-5" />
         <div>
