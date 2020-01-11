@@ -19,7 +19,7 @@ export default class PecsContainer extends Component {
       methodChange,
       methodSwitch,
       displayedCards,
-      selectedCard
+      selectCard
     } = this.props;
 
     return (
@@ -51,7 +51,7 @@ export default class PecsContainer extends Component {
         <div className="row justify-content-center">
           <CardCollection
             displayedCards={displayedCards}
-            selectedCard={selectedCard}
+            selectCard={selectCard}
           />
         </div>
       </div>

@@ -6,12 +6,13 @@ import API from "../adapters/API";
 
 export default class PecsBoardPage extends Component {
   state = {
+    cards: [],
+    displayedCards: [],
     categories: [],
     subcategories: [],
     searchTerm: "",
     methodSwitch: false,
-    displayedCards: [],
-    cards: []
+    cardsOnBoard: []
   };
 
   setCategories = () => {
@@ -95,9 +96,10 @@ export default class PecsBoardPage extends Component {
     this.setState({ methodSwitch: !this.state.methodSwitch });
   };
 
-  selectedCard = card => {
-    console.log(card.title);
-    return card;
+  selectCard = card => {
+    this.setState({
+      cardsOnBoard: [card, ...this.state.cardsOnBoard]
+    })
   };
 
   render() {
@@ -106,7 +108,8 @@ export default class PecsBoardPage extends Component {
       subcategories,
       displayedCards,
       searchTerm,
-      methodSwitch
+      methodSwitch,
+      cardsOnBoard
     } = this.state;
     const {
       handleCategoryChange,
@@ -115,18 +118,13 @@ export default class PecsBoardPage extends Component {
       handleSearchSubmit,
       handleSearchClear,
       methodChange,
-      selectedCard
+      selectCard
     } = this;
 
     return (
       <div className="PecsBoardPage container-fluid">
         <div className="PecsBoardArea row justify-content-center pt-3 mb-3">
-          <div>
-            <h1>PECS board</h1>
-          </div>
-          <div>
-            <PecsBoard />
-          </div>
+            <PecsBoard cardsOnBoard={cardsOnBoard} />
         </div>
         <div>
           <Play />
@@ -145,7 +143,7 @@ export default class PecsBoardPage extends Component {
             subcategories={subcategories}
             filterCards={filterCards}
             displayedCards={displayedCards}
-            selectedCard={selectedCard}
+            selectCard={selectCard}
           />
         </div>
       </div>
