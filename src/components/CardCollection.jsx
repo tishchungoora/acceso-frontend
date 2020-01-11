@@ -3,7 +3,7 @@ import Card from "../components/Card";
 
 export default class CardCollection extends Component {
   render() {
-    const { displayedCards } = this.props;
+    const { displayedCards, selectedCard } = this.props;
 
     return (
       <div className="CardCollection">
@@ -14,7 +14,7 @@ export default class CardCollection extends Component {
         <div className="row justify-content-center">
 
         {displayedCards.map(card => (
-          <Card key={card.id} card={card} />
+          <Card key={card.id} card={card} selectedCard={selectedCard} />
         ))}
         </div>
       </div>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class Card extends Component {
   render() {
-    const { card } = this.props;
+    const { card, selectedCard } = this.props;
 
     return (
       <div className="card m-3 shadow">
@@ -14,7 +14,7 @@ export default class Card extends Component {
 
         <img className="card-img-top" src={card.image_url} alt={card.title} />
         <div className="card-body text-center">
-          <button className="btn btn-warning">
+          <button className="btn btn-warning" onClick={() => selectedCard(card)}>
             <span className="oi oi-plus"></span>
           </button>
         </div>
