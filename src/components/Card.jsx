@@ -12,14 +12,10 @@ export default class Card extends Component {
           </li>
         </ul>
 
-        <img
-          className="card-img-top"
-          src={card.image_url}
-          alt={card.title}
-        />
-        <div className="card-body">
-          <button className="btn btn-info">
-            Learn more
+        <img className="card-img-top" src={card.image_url} alt={card.title} />
+        <div className="card-body text-center">
+          <button className="btn btn-warning">
+            <span className="oi oi-plus"></span>
           </button>
         </div>
       </div>

@@ -6,7 +6,7 @@ export default class PecsBoard extends Component {
     return (
       <div className="PecsBoard container-fluid">
         <div className="row">
-          <h1>Placeholder for board</h1>
+          <h1 className="display-4">Placeholder for board</h1>
         </div>
         <div className="row">
           <PecsContainer />

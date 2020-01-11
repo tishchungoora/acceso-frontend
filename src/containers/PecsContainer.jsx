@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import CardCollection from "../components/CardCollection";
 import SearchBar from "../components/SearchBar";
+
 import CategorySelector from "../components/CategorySelector";
 import SubCategorySelector from "../components/SubCategorySelector";
+import SwitchToSearch from "../components/SwitchToSearch";
 import API from "../adapters/API";
 
 export default class PecsContainer extends Component {
@@ -10,6 +12,7 @@ export default class PecsContainer extends Component {
     categories: [],
     subcategories: [],
     searchTerm: "",
+    methodSwitch: false,
     displayedCards: [],
     cards: []
   };
@@ -91,6 +94,10 @@ export default class PecsContainer extends Component {
     });
   };
 
+  methodChange = () => {
+    this.setState({ methodSwitch: !this.state.methodSwitch });
+  };
+
   render() {
     const {
       categories,
@@ -103,29 +110,35 @@ export default class PecsContainer extends Component {
       filterCards,
       handleSearchInputChange,
       handleSearchSubmit,
-      handleSearchClear
+      handleSearchClear,
+      methodChange
     } = this;
 
     return (
       <div className="PecsContainer container-fluid col-sm-10">
-        <div className="row justify-content-center">
-          <SearchBar
-            handleSearchInputChange={handleSearchInputChange}
-            handleSearchSubmit={handleSearchSubmit}
-            handleSearchClear={handleSearchClear}
-            searchTerm={searchTerm}
-          />
-        </div>
-        <div className="row justify-content-center">
-          <CategorySelector
-            categories={categories}
-            handleCategoryChange={handleCategoryChange}
-          />
-          <SubCategorySelector
-            subcategories={subcategories}
-            filterCards={filterCards}
-          />
-        </div>
+        {this.state.methodSwitch === false ? (
+          <div className="row justify-content-center">
+            <SearchBar
+              handleSearchInputChange={handleSearchInputChange}
+              handleSearchSubmit={handleSearchSubmit}
+              handleSearchClear={handleSearchClear}
+              searchTerm={searchTerm}
+              methodChange={methodChange}
+            />
+          </div>
+        ) : (
+          <div className="row justify-content-center">
+            <CategorySelector
+              categories={categories}
+              handleCategoryChange={handleCategoryChange}
+            />
+            <SubCategorySelector
+              subcategories={subcategories}
+              filterCards={filterCards} />
+            <SwitchToSearch methodChange={methodChange} />
+          </div>
+        )}
+
         <div className="row justify-content-center">
           <CardCollection displayedCards={displayedCards} />
         </div>

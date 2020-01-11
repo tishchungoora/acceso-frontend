@@ -14,6 +14,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1, h2, h3, h4, h5, h6 { font-family: "Love Ya Like A Sister" }
+
 /* home page banner */
 
 #banner {
@@ -61,4 +63,10 @@ footer a:visited {
   margin: 3em;
   padding: 2em;
   background-color: lightskyblue;
+}
+
+.card-body .btn {
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
 }

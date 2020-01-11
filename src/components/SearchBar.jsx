@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SwitchToCategory from "../components/SwitchToCategory";
 
 export default class SearchBar extends Component {
   render() {
@@ -6,7 +7,8 @@ export default class SearchBar extends Component {
       handleSearchInputChange,
       handleSearchSubmit,
       handleSearchClear,
-      searchTerm
+      searchTerm,
+      methodChange
     } = this.props;
 
     return (
@@ -31,6 +33,7 @@ export default class SearchBar extends Component {
             Clear
           </button>
         </form>
+        <SwitchToCategory methodChange={methodChange} />
       </div>
     );
   }
