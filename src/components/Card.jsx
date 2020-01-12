@@ -19,7 +19,11 @@ export default class Card extends Component {
 
     return (
       <div className="card m-3 shadow">
-        <button type="button btn-link" onClick={this.handleClick}>
+        <button
+          type="button"
+          className="btn btn-link"
+          onClick={this.handleClick}
+        >
           Learn more
         </button>
 
@@ -29,11 +33,21 @@ export default class Card extends Component {
           aria-labelledby="ModalHeader"
         >
           <Modal.Header closeButton>
-            <Modal.Title id="ModalHeader">{card.title}</Modal.Title>
+            <Modal.Title id="ModalHeader">
+              <h1>{card.title}</h1>
+            </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>{card.description}</p>
+            <div className="modal-img">
+              <img className="img-fluid" src={card.image_url} alt={card.title} />
+            </div>
+            <div>
+              <p>{card.description}</p>
+            </div>
           </Modal.Body>
+          <Modal.Footer>
+            <p>Category: {card.category.name}</p>
+          </Modal.Footer>
         </Modal>
 
         <img className="card-img-top" src={card.image_url} alt={card.title} />

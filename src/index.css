@@ -64,6 +64,16 @@ footer a:visited {
   outline-offset: -5px;
 }
 
+.modal-img {
+  text-align: center;
+}
+
+.modal-body img {
+  outline: 10px solid lightgrey;
+  outline-offset: -5px;
+  margin-bottom: 2em;
+}
+
 .CardCollection {
   max-height: 1080px;
   overflow: auto;
