@@ -104,7 +104,7 @@ export default class PecsBoardPage extends Component {
       });
     } else {
       alert(
-        "A PECS board can have a maximum of 6 cards on it at a time. This is so that information is exchanged as efficiently as possible, especially to non-verbal individuals with autism."
+        "A PECS board can hold a maximum of 6 cards at a time. This is so that information can be exchanged as efficiently as possible, especially to non-verbal individuals with autism."
       );
     }
   };
