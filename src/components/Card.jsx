@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Modal } from "react-bootstrap";
+import Player from "./Player";
 
 export default class Card extends Component {
   state = {
-    open: false
+    open: false,
+    played: false
   };
 
   handleClick = () => {
@@ -14,7 +16,28 @@ export default class Card extends Component {
     this.setState({ open: false });
   };
 
+  playVoice = () => {
+    let wordSet = this.props.card.description;
+    window.responsiveVoice.enableEstimationTimeout = false;
+    window.responsiveVoice.speak(wordSet, "UK English Female", {
+      rate: 1,
+      onend: this.toggleToPlay
+    });
+    this.setState({ played: true });
+  };
+
+  stopVoice = () => {
+    window.responsiveVoice.cancel();
+    this.setState({ played: false });
+  };
+
+  toggleToPlay = () => {
+    this.setState({ played: false });
+  };
+
   render() {
+    const { played } = this.state
+    const { playVoice, stopVoice } = this
     const { card, selectCard } = this.props;
 
     return (
@@ -39,10 +62,21 @@ export default class Card extends Component {
           </Modal.Header>
           <Modal.Body>
             <div className="modal-img">
-              <img className="img-fluid" src={card.image_url} alt={card.title} />
+              <img
+                className="img-fluid"
+                src={card.image_url}
+                alt={card.title}
+              />
             </div>
             <div>
               <p>{card.description}</p>
+            </div>
+            <div>
+              <Player
+                playVoice={playVoice}
+                stopVoice={stopVoice}
+                played={played}
+              />
             </div>
           </Modal.Body>
           <Modal.Footer>
