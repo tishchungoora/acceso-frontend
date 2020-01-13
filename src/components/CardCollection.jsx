@@ -8,11 +8,6 @@ export default class CardCollection extends Component {
     return (
       <div className="CardCollection">
         <div className="row justify-content-center">
-          
-        <h1>PECS cards</h1>
-        </div>
-        <div className="row justify-content-center">
-
         {displayedCards.map(card => (
           <Card key={card.id} card={card} selectCard={selectCard} />
         ))}

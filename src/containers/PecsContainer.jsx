@@ -47,13 +47,20 @@ export default class PecsContainer extends Component {
             <SwitchToSearch methodChange={methodChange} />
           </div>
         )}
-
-        <div className="row justify-content-center">
+        <div className="Cards">
+        <div className="PecsCardsTitle row justify-content-center">
+          <h1>PECS cards</h1>
+        </div>
+        <div className="CardsBrowser row justify-content-center">
           <CardCollection
             displayedCards={displayedCards}
             selectCard={selectCard}
           />
         </div>
+        </div>
+        
+
+        
       </div>
     );
   }
