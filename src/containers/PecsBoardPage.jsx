@@ -98,7 +98,11 @@ export default class PecsBoardPage extends Component {
   };
 
   selectCard = card => {
-    if (this.state.cardsOnBoard.length < 6) {
+    if (this.state.cardsOnBoard.includes(card)) {
+      alert(
+        "You can only add a card once to a PECS board. Please add a different card."
+      );
+    } else if (this.state.cardsOnBoard.length < 6) {
       this.setState({
         cardsOnBoard: [...this.state.cardsOnBoard, card]
       });
