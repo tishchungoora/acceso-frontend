@@ -123,10 +123,8 @@ export default class PecsBoardPage extends Component {
   };
 
   playVoice = () => {
-    let wordSet = this.state.cardsOnBoard
-      .map(card => card.title)
-      .join("--------");
-    window.responsiveVoice.speak(wordSet);
+    let wordSet = this.state.cardsOnBoard.map(card => card.title).join(". ");
+    window.responsiveVoice.speak(wordSet, "UK English Female", { rate: 0.75 });
     this.setState({ played: true });
   };
 
