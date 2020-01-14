@@ -7,8 +7,9 @@ body > #root > div:not(#footerDiv) {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont,
-  "Love Ya Like A Sister", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Love Ya Like A Sister",
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -22,7 +23,13 @@ h6 {
   font-family: "Love Ya Like A Sister";
 }
 
-p, small, .nav-link, .btn, form, .CategorySelector, .SubCategorySelector {
+p,
+small,
+.nav-link,
+.btn,
+form,
+.CategorySelector,
+.SubCategorySelector {
   font-family: "Annie Use Your Telescope";
   font-size: x-large;
 }
@@ -109,10 +116,12 @@ footer a:visited {
 .CardCollection::-webkit-scrollbar {
   width: 1.5em;
 }
+
 .CardCollection::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
   border-radius: 0.75em;
 }
+
 .CardCollection::-webkit-scrollbar-thumb {
   background-color: rgb(243, 212, 87);
   border-radius: 0.75em;
