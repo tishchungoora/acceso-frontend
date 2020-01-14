@@ -11,6 +11,7 @@ export default class PecsBoardPage extends Component {
     categories: [],
     subcategories: [],
     searchTerm: "",
+    noSearchResults: false,
     methodSwitch: false,
     cardsOnBoard: [],
     played: false
@@ -39,7 +40,7 @@ export default class PecsBoardPage extends Component {
   }
 
   handleCategoryChange = parentCategory => {
-    const newCards = [...this.state.cards]
+    const newCards = [...this.state.cards];
 
     if (parentCategory !== "All") {
       const subcats = this.state.categories.find(
@@ -71,19 +72,29 @@ export default class PecsBoardPage extends Component {
       searchTerm: event.target.value
     });
 
+  searchForPotentialMatching = () => {
+    const newCards = this.state.cards.filter(
+      c =>
+        c.title.toLowerCase().includes(this.state.searchTerm) ||
+        c.category.name.toLowerCase().includes(this.state.searchTerm)
+    );
+    if (newCards.length < 1) {
+      this.setState({ noSearchResults: true });
+    } else {
+      this.setState({
+        displayedCards: newCards,
+        noSearchResults: false
+      });
+    }
+  };
+
   handleSearchSubmit = event => {
     event.preventDefault();
 
     if (this.state.searchTerm === "") {
       this.setState({ displayedCards: this.state.cards });
     } else {
-      this.setState({
-        displayedCards: this.state.cards.filter(
-          c =>
-            c.title.toLowerCase().includes(this.state.searchTerm) ||
-            c.category.name.toLowerCase().includes(this.state.searchTerm)
-        )
-      });
+      this.searchForPotentialMatching();
     }
   };
 
@@ -91,12 +102,16 @@ export default class PecsBoardPage extends Component {
     event.preventDefault();
     this.setState({
       searchTerm: "",
-      displayedCards: this.state.cards
+      displayedCards: this.state.cards,
+      noSearchResults: false
     });
   };
 
   methodChange = () => {
-    this.setState({ methodSwitch: !this.state.methodSwitch });
+    this.setState({
+      methodSwitch: !this.state.methodSwitch,
+      noSearchResults: false
+    });
   };
 
   selectCard = card => {
@@ -128,7 +143,8 @@ export default class PecsBoardPage extends Component {
     let wordSet = this.state.cardsOnBoard.map(card => card.title).join(", ");
     window.responsiveVoice.enableEstimationTimeout = false;
     window.responsiveVoice.speak(wordSet, "UK English Female", {
-      rate: 0.75, onend: this.toggleToPlay
+      rate: 0.75,
+      onend: this.toggleToPlay
     });
     this.setState({ played: true });
   };
@@ -140,7 +156,7 @@ export default class PecsBoardPage extends Component {
 
   toggleToPlay = () => {
     this.setState({ played: false });
-  }
+  };
 
   render() {
     const {
@@ -148,6 +164,7 @@ export default class PecsBoardPage extends Component {
       subcategories,
       displayedCards,
       searchTerm,
+      noSearchResults,
       methodSwitch,
       cardsOnBoard,
       played
@@ -185,6 +202,7 @@ export default class PecsBoardPage extends Component {
             handleSearchSubmit={handleSearchSubmit}
             handleSearchClear={handleSearchClear}
             searchTerm={searchTerm}
+            noSearchResults={noSearchResults}
             methodChange={methodChange}
             methodSwitch={methodSwitch}
             categories={categories}

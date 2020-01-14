@@ -39,7 +39,7 @@ export default class PecsBoardPage extends Component {
   }
 
   handleCategoryChange = parentCategory => {
-    const newCards = [...this.state.cards]
+    const newCards = [...this.state.cards];
 
     if (parentCategory !== "All") {
       const subcats = this.state.categories.find(
@@ -128,7 +128,8 @@ export default class PecsBoardPage extends Component {
     let wordSet = this.state.cardsOnBoard.map(card => card.title).join(", ");
     window.responsiveVoice.enableEstimationTimeout = false;
     window.responsiveVoice.speak(wordSet, "UK English Female", {
-      rate: 0.75, onend: this.toggleToPlay
+      rate: 0.75,
+      onend: this.toggleToPlay
     });
     this.setState({ played: true });
   };
@@ -140,7 +141,7 @@ export default class PecsBoardPage extends Component {
 
   toggleToPlay = () => {
     this.setState({ played: false });
-  }
+  };
 
   render() {
     const {

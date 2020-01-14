@@ -94,6 +94,10 @@ footer a:visited {
   border-radius: 0 0 0.75em 0.75em;
 }
 
+.CardsBrowser h3 {
+  padding: 1em;
+}
+
 .CardCollection {
   max-height: 710px;
   overflow-y: auto;

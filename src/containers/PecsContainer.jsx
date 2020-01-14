@@ -12,6 +12,7 @@ export default class PecsContainer extends Component {
       handleSearchSubmit,
       handleSearchClear,
       searchTerm,
+      noSearchResults,
       categories,
       handleCategoryChange,
       subcategories,
@@ -48,19 +49,22 @@ export default class PecsContainer extends Component {
           </div>
         )}
         <div className="Cards">
-        <div className="PecsCardsTitle row justify-content-center">
-          <h1>PECS cards</h1>
+          <div className="PecsCardsTitle row justify-content-center">
+            <h1>PECS cards</h1>
+          </div>
+          <div className="CardsBrowser row justify-content-center">
+            {noSearchResults ? (
+              <h3>
+                Sorry, we couldn't find any matching results for '{searchTerm}'. Please try with a different word or filter by category
+              </h3>
+            ) : (
+              <CardCollection
+                displayedCards={displayedCards}
+                selectCard={selectCard}
+              />
+            )}
+          </div>
         </div>
-        <div className="CardsBrowser row justify-content-center">
-          <CardCollection
-            displayedCards={displayedCards}
-            selectCard={selectCard}
-          />
-        </div>
-        </div>
-        
-
-        
       </div>
     );
   }
