@@ -8,16 +8,16 @@ export default class Home extends Component {
         <div id="banner" className="row justify-content-center mb-5"></div>
         <div className="row justify-content-center">
           <div className="col-sm-10 mb-2">
-            <h2>The app for communicating intention and emotion with cards</h2>
+            <h2>The web app for communicating intention and emotion with cards</h2>
             <p>
-              <b>acceso</b> is an easy-to-use web app mainly aimed at parents
+              <b>acceso</b> is an easy-to-use web application aimed primarily at parents
               and carers needing to communicate intention and emotion with
               non-verbal autistic individuals.
             </p>
             <p>
               <b>acceso</b> can also be used as an educational and communication
-              tool for young children who haven't yet fully developed speech but
-              are able to communicate through visual methods.
+              tool by young children who are yet to fully develop speech but
+              capable of communicating through visual methods.
             </p>
             <p>
               <b>acceso</b> provides a set of Picture Exchange Communication
@@ -42,7 +42,7 @@ export default class Home extends Component {
         <hr />
         <div className="container-fluid mt-5 mb-5">
           <div className="row justify-content-center">
-            <h1 className="display-5 text-info">
+            <h1 className="display-5 text-info mb-4">
               Ready to build your first PECS board?
             </h1>
           </div>

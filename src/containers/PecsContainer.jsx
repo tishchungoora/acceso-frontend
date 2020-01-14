@@ -55,7 +55,7 @@ export default class PecsContainer extends Component {
           <div className="CardsBrowser row justify-content-center">
             {noSearchResults ? (
               <h3>
-                Sorry, we couldn't find any matching results for '{searchTerm}'. Please try with a different word or filter by category
+                Sorry, we couldn't find any matching results. Please try with a different word or filter by category
               </h3>
             ) : (
               <CardCollection
