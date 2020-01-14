@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <div className="">
+    <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <Link className="navbar-brand" to="/">
           <img src="./acceso-logo-white.png" alt="Acceso" height="35px" />
@@ -29,6 +29,11 @@ const NavBar = () => {
             <li className="nav-item">
               <Link className="nav-link" to="/pecs-board">
                 PECS Board
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/print-cards">
+                Print Cards
               </Link>
             </li>
           </ul>

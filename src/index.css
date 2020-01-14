@@ -8,8 +8,7 @@ body > #root > div:not(#footerDiv) {
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont,
-    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
+  "Love Ya Like A Sister", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -21,6 +20,11 @@ h4,
 h5,
 h6 {
   font-family: "Love Ya Like A Sister";
+}
+
+p, small, .nav-link, .btn, form, .CategorySelector, .SubCategorySelector {
+  font-family: "Annie Use Your Telescope";
+  font-size: x-large;
 }
 
 /* home page banner */
