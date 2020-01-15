@@ -18,11 +18,12 @@ export default class PrintBoard extends Component {
           <button className="btn btn-danger" onClick={() => resetBoard()}>
             Reset board
           </button>
-        </div>
-        <div className="row justify-content-center noPrint">
-          <button className="btn btn-info" onClick={this.print}>
+          <button className="btn btn-info ml-3" onClick={this.print}>
             Print
           </button>
+        </div>
+        <div className="row justify-content-center noPrint">
+          
         </div>
         <div className="row justify-content-center">
           {cardsOnBoard.map((card, index) => (

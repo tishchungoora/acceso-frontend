@@ -25,12 +25,12 @@ export default class PrintCardsPage extends Component {
   };
 
   setCards = () => {
-    // API.fetchCards().then(data =>
-    //   this.setState({
-    //     displayedCards: data.sort((a, b) => a.title.localeCompare(b.title)),
-    //     cards: data
-    //   })
-    // );
+    API.fetchCards().then(data =>
+      this.setState({
+        displayedCards: data.sort((a, b) => a.title.localeCompare(b.title)),
+        cards: data
+      })
+    );
   };
 
   componentDidMount() {
@@ -153,30 +153,33 @@ export default class PrintCardsPage extends Component {
 
     return (
       <div className="PrintCardsPage container-fluid">
-        <div className="PrintBoardArea row justify-content-center pt-3 mb-3">
+        <div className="row">
+          <div className="col-sm-4">
+            <PecsContainer
+              handleSearchInputChange={handleSearchInputChange}
+              handleSearchSubmit={handleSearchSubmit}
+              handleSearchClear={handleSearchClear}
+              searchTerm={searchTerm}
+              noSearchResults={noSearchResults}
+              methodChange={methodChange}
+              methodSwitch={methodSwitch}
+              categories={categories}
+              handleCategoryChange={handleCategoryChange}
+              subcategories={subcategories}
+              filterCards={filterCards}
+              displayedCards={displayedCards}
+              selectCard={selectCard}
+            />
+          </div>
+          <div className="PrintBoardArea col-sm-8 justify-content-center pt-3 mb-3">
           <PrintBoard
             cardsOnBoard={cardsOnBoard}
             removeCard={removeCard}
             resetBoard={resetBoard}
           />
         </div>
-        <div>
-          <PecsContainer
-            handleSearchInputChange={handleSearchInputChange}
-            handleSearchSubmit={handleSearchSubmit}
-            handleSearchClear={handleSearchClear}
-            searchTerm={searchTerm}
-            noSearchResults={noSearchResults}
-            methodChange={methodChange}
-            methodSwitch={methodSwitch}
-            categories={categories}
-            handleCategoryChange={handleCategoryChange}
-            subcategories={subcategories}
-            filterCards={filterCards}
-            displayedCards={displayedCards}
-            selectCard={selectCard}
-          />
         </div>
+        
       </div>
     );
   }
