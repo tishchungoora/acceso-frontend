@@ -135,7 +135,7 @@ footer a:visited {
   padding-top: 12px;
 }
 
-/* board */
+/* pecs board */
 
 .PecsBoardArea {
   min-height: 450px;
@@ -148,4 +148,29 @@ footer a:visited {
   border-radius: 50%;
   padding-top: 12px;
   padding-left: 18px;
+}
+
+/* print board */
+
+.PrintBoardArea {
+  min-height: 450px;
+  background-color: rgb(140, 240, 112);
+}
+
+@media print {
+  .noPrint {
+    display: none;
+  }
+
+  .PrintBoard .noPrint {
+    display: none;
+  }
+
+  div.BoardCard.shadow {
+    box-shadow: none !important;
+  }
+
+  .BoardCard .card-body {
+    display: none;
+  }
 }

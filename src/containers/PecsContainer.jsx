@@ -24,7 +24,7 @@ export default class PecsContainer extends Component {
     } = this.props;
 
     return (
-      <div className="PecsContainer container-fluid col-sm-10">
+      <div className="PecsContainer container-fluid col-sm-10 noPrint">
         {methodSwitch === false ? (
           <div className="row justify-content-center">
             <SearchBar
