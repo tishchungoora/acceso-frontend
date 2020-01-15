@@ -23,17 +23,6 @@ h6 {
   font-family: "Love Ya Like A Sister";
 }
 
-p,
-small,
-.nav-link,
-.btn,
-form,
-.CategorySelector,
-.SubCategorySelector {
-  font-family: "Annie Use Your Telescope";
-  font-size: x-large;
-}
-
 /* home page banner */
 
 #banner {
