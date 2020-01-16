@@ -5,7 +5,9 @@ import API from "../adapters/API";
 export default class Card extends Component {
   state = {
     open: false,
-    behaviours: []
+    behaviours: [],
+    selectedBehaviour: null,
+    title: ""
   };
 
   setBehaviours = () => {
@@ -25,8 +27,21 @@ export default class Card extends Component {
   };
 
   closeModal = () => {
-    this.setState({ open: false });
+    this.setState({ open: false, selectedBehaviour: null, title: "" });
   };
+
+  handleTitleChange = event => {
+    this.setState({
+        title: event.target.value
+    })
+  }
+
+  handleBehaviourChoice = event => {
+      let behaviour = this.state.behaviours.find(el => el.name === event.target.value)
+    this.setState({
+        selectedBehaviour: behaviour
+    })
+  }
 
   render() {
     const { behaviours } = this.state;
@@ -52,11 +67,11 @@ export default class Card extends Component {
               <label htmlFor="boardTitle" className="col-form-label">
                 Title:
               </label>
-              <input type="text" className="form-control" id="boardTitle" />
+              <input type="text" className="form-control" id="boardTitle" onChange={this.handleTitleChange} />
             </div>
             <div>
               <p>Select a relevant behaviour:</p>
-              <select className="form-control" id="behaviourSelect">
+              <select className="form-control" id="behaviourSelect" onChange={this.handleBehaviourChoice}>
                 <option value="">Choose behaviour...</option>
                 {behaviours.map(behaviour => (
                   <option key={behaviour.id} value={behaviour.name}>
