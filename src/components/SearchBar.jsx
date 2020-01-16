@@ -13,7 +13,10 @@ export default class SearchBar extends Component {
 
     return (
       <div className="SearchBar">
-        <form className="form-inline justify-content-center" onSubmit={handleSearchSubmit}>
+        <form
+          className="form-inline justify-content-center"
+          onSubmit={handleSearchSubmit}
+        >
           <input
             className="form-control m-2"
             type="text"
@@ -22,17 +25,22 @@ export default class SearchBar extends Component {
             onChange={handleSearchInputChange}
             value={searchTerm}
           />
-          <button className="btn btn-primary m-2" type="submit">
-            Search
+          <button
+            className="Magnifier btn btn-primary m-2"
+            type="submit"
+            title="Search"
+          >
+            <i className="fas fa-search"></i>
           </button>
           <button
-            className="btn btn-primary m-2"
+            className="Clear btn btn-primary m-2"
             type="submit"
+            title="Clear search"
             onClick={handleSearchClear}
           >
-            Clear
+            <i className="fas fa-times"></i>
           </button>
-        <SwitchToCategory methodChange={methodChange} />
+          <SwitchToCategory methodChange={methodChange} />
         </form>
       </div>
     );
