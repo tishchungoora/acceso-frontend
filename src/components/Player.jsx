@@ -11,14 +11,14 @@ export default class Player extends Component {
             className="StopBtn btn btn-warning btn-lg"
             onClick={() => stopVoice()}
           >
-            <span className="oi oi-media-stop"></span>
+            <i className="fas fa-stop"></i>
           </button>
         ) : (
           <button
             className="PlayBtn btn btn-warning btn-lg"
             onClick={() => playVoice()}
           >
-            <span className="oi oi-media-play"></span>
+            <i className="fas fa-play"></i>
           </button>
         )}
       </div>

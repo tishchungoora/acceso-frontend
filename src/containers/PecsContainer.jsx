@@ -54,9 +54,9 @@ export default class PecsContainer extends Component {
           </div>
           <div className="CardsBrowser row justify-content-center">
             {noSearchResults ? (
-              <h3>
+              <p className="lead">
                 Sorry, we couldn't find any matching results. Please try with a different word or filter by category
-              </h3>
+              </p>
             ) : (
               <CardCollection
                 displayedCards={displayedCards}

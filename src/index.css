@@ -122,7 +122,6 @@ footer a:visited {
   height: 3em;
   width: 3em;
   border-radius: 50%;
-  padding-top: 12px;
 }
 
 .CardCollection button.btn.btn-link {
@@ -140,7 +139,6 @@ footer a:visited {
 .Player button {
   width: 3em;
   height: 3em;
-  padding-top: 12px;
   padding-left: 18px;
   border-radius: 50%;
 }
@@ -175,7 +173,7 @@ footer a:visited {
   min-height: 3em;
 }
 
-/* search */
+/* search and filter */
 
 .SearchBar .Magnifier {
   width: 40px;
@@ -192,6 +190,14 @@ footer a:visited {
 }
 
 .SwitchToCategory .btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 0.75em;
+  padding-left: 11px;
+}
+
+.SwitchToSearch .btn {
   width: 40px;
   height: 40px;
   border-radius: 50%;

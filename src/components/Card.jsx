@@ -90,7 +90,7 @@ export default class Card extends Component {
             className="btn btn-warning btn-lg"
             onClick={() => selectCard(card)}
           >
-            <span className="oi oi-plus"></span>
+            <i className="fas fa-plus"></i>
           </button>
         </div>
       </div>

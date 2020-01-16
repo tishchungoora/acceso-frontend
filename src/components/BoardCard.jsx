@@ -12,7 +12,7 @@ export default class BoardCard extends Component {
             className="btn btn-danger btn-lg"
             onClick={() => removeCard(card)}
           >
-            <span className="oi oi-minus"></span>
+            <i className="fas fa-minus"></i>
           </button>
         </div>
       </div>
