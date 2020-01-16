@@ -22,9 +22,6 @@ export default class PrintBoard extends Component {
             Print
           </button>
         </div>
-        <div className="row justify-content-center noPrint">
-          
-        </div>
         <div className="row justify-content-center">
           {cardsOnBoard.map((card, index) => (
             <BoardCard

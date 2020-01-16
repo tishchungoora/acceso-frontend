@@ -72,6 +72,7 @@ footer a:visited {
   outline: 10px solid lightgrey;
   outline-offset: -5px;
   margin-bottom: 2em;
+  width: 50%;
 }
 
 .Cards {
@@ -124,11 +125,16 @@ footer a:visited {
   padding-top: 12px;
 }
 
+.CardCollection button.btn.btn-link {
+  font-size: 1em;
+}
+
 /* pecs board */
 
 .PecsBoardArea {
-  min-height: 450px;
+  min-height: 300px;
   background-color: rgb(243, 212, 87);
+  padding-bottom: 20px;
 }
 
 .Player button {
@@ -137,6 +143,10 @@ footer a:visited {
   border-radius: 50%;
   padding-top: 12px;
   padding-left: 18px;
+}
+
+.BoardCard.card {
+  min-height: 300px;
 }
 
 /* print board */
