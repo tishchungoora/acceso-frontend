@@ -13,7 +13,7 @@ export default class PecsBoard extends Component {
         <div className="row justify-content-center">
           <button className="btn btn-danger" onClick={() => resetBoard()}>Reset board</button>
         </div>
-        <div className="row justify-content-center">
+        <div className="BoardCards">
           {cardsOnBoard.map((card, index) => (
             <BoardCard
               key={card.id + index}
