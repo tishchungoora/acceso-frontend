@@ -31,11 +31,6 @@ const NavBar = () => {
                 PECS Board
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/print-cards">
-                Print Cards
-              </Link>
-            </li>
           </ul>
         </div>
       </nav>
