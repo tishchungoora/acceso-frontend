@@ -5,6 +5,7 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Home from "../containers/Home";
 import PecsBoardPage from "../containers/PecsBoardPage";
+import SavedBoardsPage from "../containers/SavedBoardsPage";
 
 export default class App extends Component {
   render() {
@@ -14,6 +15,7 @@ export default class App extends Component {
           <NavBar />
           <Route exact path="/" component={Home} />
           <Route exact path="/pecs-board" component={PecsBoardPage} />
+          <Route exact path="/saved-boards" component={SavedBoardsPage} />
           <Footer />
         </div>
       </Router>

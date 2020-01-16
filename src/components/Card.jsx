@@ -36,8 +36,8 @@ export default class Card extends Component {
   };
 
   render() {
-    const { played } = this.state
-    const { playVoice, stopVoice } = this
+    const { played } = this.state;
+    const { playVoice, stopVoice } = this;
     const { card, selectCard } = this.props;
 
     return (
@@ -79,7 +79,7 @@ export default class Card extends Component {
               />
             </div>
           </Modal.Body>
-          <Modal.Footer>
+          <Modal.Footer className="justify-content-center">
             <p>Category: {card.category.name}</p>
           </Modal.Footer>
         </Modal>

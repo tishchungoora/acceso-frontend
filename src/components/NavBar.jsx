@@ -31,6 +31,11 @@ const NavBar = () => {
                 PECS Board
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/saved-boards">
+                Saved boards
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>

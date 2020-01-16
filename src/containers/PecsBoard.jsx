@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import BoardCard from "../components/BoardCard";
+import Save from "../components/Save"
 
 export default class PecsBoard extends Component {
   render() {
@@ -11,7 +12,9 @@ export default class PecsBoard extends Component {
           <h1>PECS board</h1>
         </div>
         <div className="row justify-content-center">
-          <button className="btn btn-danger" onClick={() => resetBoard()}><i className="fas fa-eraser"></i> Reset board</button>
+          <button className="btn btn-danger m-2" onClick={() => resetBoard()}><i className="fas fa-eraser"></i> Reset</button>
+
+          <Save />
         </div>
         <div className="BoardCards">
           {cardsOnBoard.map((card, index) => (
