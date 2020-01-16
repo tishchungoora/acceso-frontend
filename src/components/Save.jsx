@@ -1,10 +1,24 @@
 import React, { Component } from "react";
 import { Modal } from "react-bootstrap";
+import API from "../adapters/API";
 
 export default class Card extends Component {
   state = {
-    open: false
+    open: false,
+    behaviours: []
   };
+
+  setBehaviours = () => {
+    API.fetchBehaviours().then(data =>
+      this.setState({
+        behaviours: data
+      })
+    );
+  };
+
+  componentDidMount() {
+    this.setBehaviours();
+  }
 
   handleClick = () => {
     this.setState({ open: true });
@@ -15,6 +29,8 @@ export default class Card extends Component {
   };
 
   render() {
+    const { behaviours } = this.state;
+
     return (
       <div className="Save">
         <button className="btn btn-info m-2" onClick={this.handleClick}>
@@ -33,7 +49,7 @@ export default class Card extends Component {
           </Modal.Header>
           <Modal.Body>
             <div className="form-group">
-              <label for="boardTitle" className="col-form-label">
+              <label htmlFor="boardTitle" className="col-form-label">
                 Title:
               </label>
               <input type="text" className="form-control" id="boardTitle" />
@@ -42,9 +58,11 @@ export default class Card extends Component {
               <p>Select a relevant behaviour:</p>
               <select className="form-control" id="behaviourSelect">
                 <option value="">Choose behaviour...</option>
-                <option value="Routine">Routine</option>
-                <option value="Anxiety">Anxiety</option>
-                <option value="Challenging">Challenging</option>
+                {behaviours.map(behaviour => (
+                  <option key={behaviour.id} value={behaviour.name}>
+                    {behaviour.name}
+                  </option>
+                ))}
               </select>
             </div>
           </Modal.Body>
