@@ -32,16 +32,36 @@ export default class Card extends Component {
 
   handleTitleChange = event => {
     this.setState({
-        title: event.target.value
-    })
-  }
+      title: event.target.value
+    });
+  };
 
   handleBehaviourChoice = event => {
-      let behaviour = this.state.behaviours.find(el => el.name === event.target.value)
+    let behaviour = this.state.behaviours.find(
+      el => el.name === event.target.value
+    );
     this.setState({
-        selectedBehaviour: behaviour
-    })
-  }
+      selectedBehaviour: behaviour
+    });
+  };
+
+  //   handleConfirmation = () => {
+  //     API.postBoard(this.state.title);
+  //   };
+
+  post = () => {
+    return fetch("http://localhost:3000/api/v1/boards", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify({
+        title: this.state.title,
+        behaviour: this.state.selectedBehaviour
+      })
+    }).then(resp => resp.json());
+  };
 
   render() {
     const { behaviours } = this.state;
@@ -67,14 +87,28 @@ export default class Card extends Component {
               <label htmlFor="boardTitle" className="col-form-label">
                 Title:
               </label>
-              <input type="text" className="form-control" id="boardTitle" onChange={this.handleTitleChange} />
+              <input
+                type="text"
+                name="title"
+                className="form-control"
+                id="boardTitle"
+                onChange={this.handleTitleChange}
+              />
             </div>
             <div>
               <p>Select a relevant behaviour:</p>
-              <select className="form-control" id="behaviourSelect" onChange={this.handleBehaviourChoice}>
+              <select
+                className="form-control"
+                id="behaviourSelect"
+                onChange={this.handleBehaviourChoice}
+              >
                 <option value="">Choose behaviour...</option>
                 {behaviours.map(behaviour => (
-                  <option key={behaviour.id} value={behaviour.name}>
+                  <option
+                    key={behaviour.id}
+                    value={behaviour.name}
+                    title={behaviour.description}
+                  >
                     {behaviour.name}
                   </option>
                 ))}
@@ -82,7 +116,10 @@ export default class Card extends Component {
             </div>
           </Modal.Body>
           <Modal.Footer className="justify-content-center">
-            <button className="btn btn-info m-2" onClick={() => {}}>
+            <button
+              className="btn btn-info m-2"
+              onClick={this.handleConfirmation}
+            >
               Confirm
             </button>
           </Modal.Footer>
