@@ -6,8 +6,9 @@ export default class Card extends Component {
   state = {
     open: false,
     behaviours: [],
-    selectedBehaviour: null,
-    title: ""
+    title: "",
+    behaviourId: null,
+    userId: null
   };
 
   setBehaviours = () => {
@@ -18,8 +19,17 @@ export default class Card extends Component {
     );
   };
 
+  setUserId = () => {
+    API.fetchUsers().then(data =>
+      this.setState({
+        userId: data[0].id
+      })
+    );
+  };
+
   componentDidMount() {
     this.setBehaviours();
+    this.setUserId();
   }
 
   handleClick = () => {
@@ -41,26 +51,18 @@ export default class Card extends Component {
       el => el.name === event.target.value
     );
     this.setState({
-      selectedBehaviour: behaviour
+      behaviourId: behaviour.id
     });
   };
 
-  //   handleConfirmation = () => {
-  //     API.postBoard(this.state.title);
-  //   };
-
-  post = () => {
-    return fetch("http://localhost:3000/api/v1/boards", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      body: JSON.stringify({
-        title: this.state.title,
-        behaviour: this.state.selectedBehaviour
-      })
-    }).then(resp => resp.json());
+  handleConfirmation = () => {
+    let boardData = {
+      title: this.state.title,
+      behaviour_id: this.state.behaviourId,
+      user_id: this.state.userId
+    };
+    API.postBoard(boardData);
+    this.closeModal();
   };
 
   render() {
@@ -92,7 +94,9 @@ export default class Card extends Component {
                 name="title"
                 className="form-control"
                 id="boardTitle"
+                placeholder="Enter title"
                 onChange={this.handleTitleChange}
+                required
               />
             </div>
             <div>
@@ -102,7 +106,6 @@ export default class Card extends Component {
                 id="behaviourSelect"
                 onChange={this.handleBehaviourChoice}
               >
-                <option value="">Choose behaviour...</option>
                 {behaviours.map(behaviour => (
                   <option
                     key={behaviour.id}
