@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Modal } from "react-bootstrap";
 import API from "../adapters/API";
 
-export default class Card extends Component {
+export default class Save extends Component {
   state = {
     open: false,
     behaviours: [],
@@ -59,7 +59,8 @@ export default class Card extends Component {
     let boardData = {
       title: this.state.title,
       behaviour_id: this.state.behaviourId,
-      user_id: this.state.userId
+      user_id: this.state.userId,
+      cards: this.props.cardsOnBoard
     };
     API.postBoard(boardData);
     this.closeModal();
@@ -106,6 +107,7 @@ export default class Card extends Component {
                 id="behaviourSelect"
                 onChange={this.handleBehaviourChoice}
               >
+                <option value="">Choose behaviour...</option>
                 {behaviours.map(behaviour => (
                   <option
                     key={behaviour.id}

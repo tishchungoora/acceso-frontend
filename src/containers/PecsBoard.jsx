@@ -14,7 +14,7 @@ export default class PecsBoard extends Component {
         <div className="row justify-content-center">
           <button className="btn btn-danger m-2" onClick={() => resetBoard()}><i className="fas fa-eraser"></i> Reset</button>
 
-          <Save />
+          <Save cardsOnBoard={cardsOnBoard} />
         </div>
         <div className="BoardCards">
           {cardsOnBoard.map((card, index) => (
