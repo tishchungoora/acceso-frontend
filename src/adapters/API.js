@@ -23,6 +23,10 @@ const fetchUsers = () => {
   return fetch(USERS_URL).then(jsonify);
 };
 
+const fetchBoards = () => {
+  return fetch(BOARDS_URL).then(jsonify);
+}
+
 const postBoard = boardData =>
   fetch(BOARDS_URL, {
     method: "POST",
@@ -38,5 +42,6 @@ export default {
   fetchCards,
   fetchBehaviours,
   fetchUsers,
+  fetchBoards,
   postBoard
 };
