@@ -1,4 +1,4 @@
-const API_ENDPOINT = "http://localhost:3000/api/v1";
+const API_ENDPOINT = "https://acesso-backend.herokuapp.com/api/v1";
 const CATEGORIES_URL = `${API_ENDPOINT}/categories`;
 const CARDS_URL = `${API_ENDPOINT}/cards`;
 const BEHAVIOURS_URL = `${API_ENDPOINT}/behaviours`;
