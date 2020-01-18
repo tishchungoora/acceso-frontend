@@ -209,14 +209,30 @@ footer a:visited {
 
 .SavedBoard {
   background-color: bisque;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 15px;
+  border-radius: 15px;
+  max-width: 80%;
 }
 
-.ColorCode {
-  width:10px
+.Title {
+  margin-top: 12px;
+}
+
+.Title .Routine {
+  color: green;
+}
+
+.Title .Anxiety {
+  color: rgb(232, 65, 193);
+}
+
+.Title .Challenging {
+  color: purple;
 }
 
 .card-deck {
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }

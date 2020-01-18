@@ -33,19 +33,20 @@ export default class SavedBoard extends Component {
     const { board, handleDeletion } = this.props;
 
     return (
-      <div className="SavedBoard container-fluid">
-        <div className="row justify-content-left">
-          <div className="Player col-sm-1">
+      <div className="SavedBoard container-fluid shadow">
+        <div className="row">
+          <div className="Player col-sm-2">
             <Player
               playVoice={playVoice}
               stopVoice={stopVoice}
               played={played}
             />
           </div>
-          <div className="Title col-sm-11">
-            <h2>{board.title}</h2>
+          <div className="Title col-sm-10">
+            <h2 className={board.behaviour.name}>{board.title}</h2>
           </div>
         </div>
+        <hr />
         <div className="row justify-content-center">
           <div className="card-deck">
             {board.cards.map(card => (
@@ -59,6 +60,7 @@ export default class SavedBoard extends Component {
             ))}
           </div>
         </div>
+        <hr />
         <div className="row justify-content-center">
           <Delete handleDeletion={handleDeletion} board={board} />
         </div>
