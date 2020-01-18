@@ -86,48 +86,49 @@ export default class Save extends Component {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <div className="form-group">
-              <label htmlFor="boardTitle" className="col-form-label">
-                Title:
-              </label>
-              <input
-                type="text"
-                name="title"
-                className="form-control"
-                id="boardTitle"
-                placeholder="Enter title"
-                onChange={this.handleTitleChange}
-                required
-              />
-            </div>
-            <div>
-              <p>Select a relevant behaviour:</p>
-              <select
-                className="form-control"
-                id="behaviourSelect"
-                onChange={this.handleBehaviourChoice}
-              >
-                <option value="">Choose behaviour...</option>
-                {behaviours.map(behaviour => (
-                  <option
-                    key={behaviour.id}
-                    value={behaviour.name}
-                    title={behaviour.description}
-                  >
-                    {behaviour.name}
-                  </option>
-                ))}
-              </select>
-            </div>
+            <form onSubmit={this.handleConfirmation}>
+              <div className="form-group">
+                <label htmlFor="boardTitle" className="col-form-label">
+                  Title:
+                </label>
+                <input
+                  type="text"
+                  name="title"
+                  className="form-control"
+                  id="boardTitle"
+                  placeholder="Enter title"
+                  onChange={this.handleTitleChange}
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="behaviourSelect">
+                  Select a relevant behaviour:
+                </label>
+                <select
+                  className="form-control"
+                  id="behaviourSelect"
+                  onChange={this.handleBehaviourChoice}
+                >
+                  <option value="Routine">Choose behaviour...</option>
+                  {behaviours.map(behaviour => (
+                    <option
+                      key={behaviour.id}
+                      value={behaviour.name}
+                      title={behaviour.description}
+                    >
+                      {behaviour.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="row justify-content-center">
+                <button className="btn btn-info m-2" type="submit">
+                  Submit
+                </button>
+              </div>
+            </form>
           </Modal.Body>
-          <Modal.Footer className="justify-content-center">
-            <button
-              className="btn btn-info m-2"
-              onClick={this.handleConfirmation}
-            >
-              Confirm
-            </button>
-          </Modal.Footer>
         </Modal>
       </div>
     );
