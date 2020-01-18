@@ -25,7 +25,7 @@ const fetchUsers = () => {
 
 const fetchBoards = () => {
   return fetch(BOARDS_URL).then(jsonify);
-}
+};
 
 const postBoard = boardData =>
   fetch(BOARDS_URL, {
@@ -37,9 +37,9 @@ const postBoard = boardData =>
     body: JSON.stringify(boardData)
   }).then(jsonify);
 
-  const deleteBoard = id =>
+const deleteBoard = id =>
   fetch(BOARDS_URL + `/${id}`, {
-    method: "DELETE",
+    method: "DELETE"
   }).then(jsonify);
 
 export default {

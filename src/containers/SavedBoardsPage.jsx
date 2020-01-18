@@ -30,14 +30,21 @@ export default class SavedBoardsPage extends Component {
     this.setBehaviours();
   }
 
- 
+  handleDeletion = id => {
+    API.deleteBoard(id)
+    
+    const boards = this.state.boards.filter(b => b.id !== id)
+    this.setState({ boards })
+  }
 
   render() {
     const { boards } = this.state;
+    const { handleDeletion } = this;
+
     return (
       <div className="SavedBoardPage container-fluid">
         {boards.map(board => (
-          <SavedBoard key={board.id} board={board} />
+          <SavedBoard key={board.id} board={board} handleDeletion={handleDeletion} />
         ))}
       </div>
     );

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Player from "../components/Player";
-import API from "../adapters/API";
 
 export default class SavedBoard extends Component {
   state = {
@@ -27,15 +26,11 @@ export default class SavedBoard extends Component {
     this.setState({ played: false });
   };
 
-  handleDeletion = () => {
-    API.deleteBoard(this.props.board.id)
-    console.log(this.props.board.id)
-  }
-
   render() {
     const { played } = this.state;
     const { playVoice, stopVoice } = this;
-    const { board } = this.props;
+    const { board, handleDeletion } = this.props;
+
     return (
       <div className="card-deck container-fluid">
         <h2>{board.title}</h2>
@@ -49,7 +44,7 @@ export default class SavedBoard extends Component {
           </div>
         ))}
         <Player playVoice={playVoice} stopVoice={stopVoice} played={played} />
-        <button className="btn btn-danger btn-lg" onClick={this.handleDeletion}>
+        <button className="btn btn-danger btn-lg" onClick={() => handleDeletion(board.id)}>
           Delete
         </button>
 
