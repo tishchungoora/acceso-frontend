@@ -205,7 +205,7 @@ footer a:visited {
 /* saved boards */
 
 .SavedBoard {
-  background-color:rgb(198, 233, 255);
+  background-color:;
   margin-top: 30px;
   margin-bottom: 30px;
   padding: 15px;
@@ -214,15 +214,18 @@ footer a:visited {
 }
 
 .Routine.SavedBoard {
-  border: 1px solid green;
+  /* border: 5px solid green; */
+  background-color: rgb(188, 252, 188);
 }
 
 .Anxiety.SavedBoard {
-  border: 1px solid  rgb(232, 65, 193);
+  /* border: 5px solid  rgb(232, 65, 193); */
+  background-color: rgb(255, 209, 245);
 }
 
 .Challenging.SavedBoard {
-  border: 1px solid  purple;
+  /* border: 5px solid  purple; */
+  background-color: rgb(255, 163, 255);
 }
 
 .Routine .Title {
@@ -237,7 +240,38 @@ footer a:visited {
   color: purple;
 }
 
+.SavedBoard .PlayBtn {
+  border: 3px solid white;
+}
+
 .card-deck {
   padding-left: 10px;
   padding-right: 10px;
 }
+
+/* behaviour selector */
+
+.BehaviourSelector {
+ margin-top: 30px;
+ margin-bottom: 30px;
+}
+.BehaviourSelector .Routine {
+  color: green;
+}
+
+.BehaviourSelector .Anxiety {
+  color: rgb(232, 65, 193);
+}
+
+.BehaviourSelector .Challenging {
+  color: purple;
+}
+
+.BehaviourSelector .Clear {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding-left: 13px;
+}
+
+

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import SavedBoard from "../containers/SavedBoard";
+import SavedBoard from "./SavedBoard";
+import BehaviourSelector from "../components/BehaviourSelector";
 import API from "../adapters/API";
 
 export default class SavedBoardsPage extends Component {
@@ -31,20 +32,26 @@ export default class SavedBoardsPage extends Component {
   }
 
   handleDeletion = id => {
-    API.deleteBoard(id)
-    
-    const boards = this.state.boards.filter(b => b.id !== id)
-    this.setState({ boards })
-  }
+    API.deleteBoard(id);
+
+    const boards = this.state.boards.filter(b => b.id !== id);
+    this.setState({ boards });
+  };
 
   render() {
-    const { boards } = this.state;
+    const { boards, behaviours } = this.state;
     const { handleDeletion } = this;
 
     return (
       <div className="SavedBoardPage container-fluid">
+        <BehaviourSelector behaviours={behaviours} />
+        <hr />
         {boards.map(board => (
-          <SavedBoard key={board.id} board={board} handleDeletion={handleDeletion} />
+          <SavedBoard
+            key={board.id}
+            board={board}
+            handleDeletion={handleDeletion}
+          />
         ))}
       </div>
     );
