@@ -195,7 +195,7 @@ export default class PecsBoardPage extends Component {
         </div>
         {cardsOnBoard.length === 0 ? true : (<div>
           <Player playVoice={playVoice} stopVoice={stopVoice} played={played} />
-          <hr className="mb-5" />
+          <hr className="mb-2" />
         </div>)}
         <div>
           <PecsContainer

@@ -114,7 +114,12 @@ export default class Save extends Component {
                   onChange={this.handleBehaviourChoice}
                   required
                 >
-                  <option value="Routine" title="If chosen defaults to 'Routine'">Choose behaviour...</option>
+                  <option
+                    value="Routine"
+                    title="If selected defaults to 'Routine'"
+                  >
+                    Choose behaviour...
+                  </option>
                   {behaviours.map(behaviour => (
                     <option
                       key={behaviour.id}
