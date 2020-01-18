@@ -37,7 +37,7 @@ export default class Save extends Component {
   };
 
   closeModal = () => {
-    this.setState({ open: false, selectedBehaviour: null, title: "" });
+    this.setState({ open: false, behaviourId: null, title: "" });
   };
 
   handleTitleChange = event => {
@@ -112,8 +112,9 @@ export default class Save extends Component {
                   className="form-control"
                   id="behaviourSelect"
                   onChange={this.handleBehaviourChoice}
+                  required
                 >
-                  <option value="Routine">Choose behaviour...</option>
+                  <option value="Routine" title="If chosen defaults to 'Routine'">Choose behaviour...</option>
                   {behaviours.map(behaviour => (
                     <option
                       key={behaviour.id}

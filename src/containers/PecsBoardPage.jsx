@@ -193,10 +193,10 @@ export default class PecsBoardPage extends Component {
             resetBoard={resetBoard}
           />
         </div>
-        <div>
+        {cardsOnBoard.length === 0 ? true : (<div>
           <Player playVoice={playVoice} stopVoice={stopVoice} played={played} />
-        </div>
-        <hr className="mb-5" />
+          <hr className="mb-5" />
+        </div>)}
         <div>
           <PecsContainer
             handleSearchInputChange={handleSearchInputChange}

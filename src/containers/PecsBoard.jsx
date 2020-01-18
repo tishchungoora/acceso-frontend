@@ -11,22 +11,20 @@ export default class PecsBoard extends Component {
         <div className="row justify-content-center">
           <h1>PECS board</h1>
         </div>
-        <div className="row justify-content-center">
+        <div className="row justify-content-center m-2">
           {cardsOnBoard.length === 0 ? (
-            true
+            <p className="lead text-center">
+              &#9312; Select up to 6 PECS cards by searching or filtering by
+              category
+            </p>
           ) : (
-            <div className="row">
-              <button
-                className="btn btn-danger m-2"
-                onClick={() => resetBoard()}
-              >
-                <i className="fas fa-eraser"></i> Reset
-              </button>
-              <Save cardsOnBoard={cardsOnBoard} />
-            </div>
+            <p className="lead text-center">
+              &#9313; Play the sequence, reset or save your board
+            </p>
           )}
+          
         </div>
-        <div className="BoardCards">
+        <div className="BoardCards justify-content-center">
           {cardsOnBoard.map((card, index) => (
             <BoardCard
               key={card.id + index}
@@ -35,6 +33,16 @@ export default class PecsBoard extends Component {
             />
           ))}
         </div>
+        {cardsOnBoard.length === 0 ? (
+          true
+        ) : (
+          <div className="row mt-3 justify-content-center">
+            <button className="btn btn-danger m-2" onClick={() => resetBoard()}>
+              <i className="fas fa-eraser"></i> Reset
+            </button>
+            <Save cardsOnBoard={cardsOnBoard} />
+          </div>
+        )}
       </div>
     );
   }
