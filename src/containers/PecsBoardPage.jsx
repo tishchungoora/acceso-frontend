@@ -144,7 +144,7 @@ export default class PecsBoardPage extends Component {
     let wordSet = this.state.cardsOnBoard.map(card => card.title).join(", ");
     window.responsiveVoice.enableEstimationTimeout = false;
     window.responsiveVoice.speak(wordSet, "UK English Female", {
-      rate: 1.0,
+      rate: 0.85,
       onend: this.toggleToPlay
     });
     this.setState({ played: true });

@@ -204,3 +204,19 @@ footer a:visited {
   margin-left: 0.75em;
   padding-left: 11px;
 }
+
+/* saved boards */
+
+.SavedBoard {
+  background-color: bisque;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.ColorCode {
+  width:10px
+}
+
+.card-deck {
+  padding: 10px;
+}
