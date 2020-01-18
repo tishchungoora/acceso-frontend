@@ -33,24 +33,22 @@ export default class SavedBoard extends Component {
     const { board, handleDeletion } = this.props;
 
     return (
-      <div className="SavedBoard container-fluid shadow">
-        <div className="row">
-          <div className="Player col-sm-2">
+      <div className={board.behaviour.name + " SavedBoard container-fluid shadow"}>
+        <div className="Title row justify-content-center">
+            <h2 className={board.behaviour.name}>{board.title}</h2>
+          </div>
+          <div className="Player">
             <Player
               playVoice={playVoice}
               stopVoice={stopVoice}
               played={played}
             />
           </div>
-          <div className="Title col-sm-10">
-            <h2 className={board.behaviour.name}>{board.title}</h2>
-          </div>
-        </div>
         <hr />
         <div className="row justify-content-center">
           <div className="card-deck">
             {board.cards.map(card => (
-              <div key={card.id} className="card">
+              <div key={card.id} className="card shadow">
                 <img
                   className="card-img-top"
                   src={card.image_url}
