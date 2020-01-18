@@ -55,13 +55,16 @@ export default class Save extends Component {
     });
   };
 
-  handleConfirmation = () => {
+  handleConfirmation = event => {
+    event.preventDefault();
+
     let boardData = {
       title: this.state.title,
       behaviour_id: this.state.behaviourId,
       user_id: this.state.userId,
       cards: this.props.cardsOnBoard
     };
+
     API.postBoard(boardData);
     this.closeModal();
   };
@@ -86,7 +89,7 @@ export default class Save extends Component {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <form onSubmit={this.handleConfirmation}>
+            <form onSubmit={event => this.handleConfirmation(event)}>
               <div className="form-group">
                 <label htmlFor="boardTitle" className="col-form-label">
                   Title:
