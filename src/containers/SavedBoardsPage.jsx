@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SavedBoard from "../containers/SavedBoard";
 import API from "../adapters/API";
 
 export default class SavedBoardsPage extends Component {
@@ -9,21 +10,23 @@ export default class SavedBoardsPage extends Component {
   setBoards = () => {
     API.fetchBoards().then(data =>
       this.setState({
-        boards: data.sort((a, b) =>
-          a.title.localeCompare(b.title))
+        boards: data.sort((a, b) => a.title.localeCompare(b.title))
       })
     );
   };
 
   componentDidMount() {
-      window.scrollTo(0, 0)
-      this.setBoards()
+    window.scrollTo(0, 0);
+    this.setBoards();
   }
 
   render() {
+    const { boards } = this.state;
     return (
-      <div>
-        <h1>Saved boards go here!</h1>
+      <div className="SavedBoardPage container-fluid">
+        {boards.map(board => (
+          <SavedBoard key={board.id} board={board} />
+        ))}
       </div>
     );
   }
