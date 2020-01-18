@@ -4,7 +4,8 @@ import API from "../adapters/API";
 
 export default class SavedBoardsPage extends Component {
   state = {
-    boards: []
+    boards: [],
+    behaviours: []
   };
 
   setBoards = () => {
@@ -15,10 +16,21 @@ export default class SavedBoardsPage extends Component {
     );
   };
 
+  setBehaviours = () => {
+    API.fetchBehaviours().then(data =>
+      this.setState({
+        behaviours: data
+      })
+    );
+  };
+
   componentDidMount() {
     window.scrollTo(0, 0);
     this.setBoards();
+    this.setBehaviours();
   }
+
+ 
 
   render() {
     const { boards } = this.state;

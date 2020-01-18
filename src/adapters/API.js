@@ -37,11 +37,17 @@ const postBoard = boardData =>
     body: JSON.stringify(boardData)
   }).then(jsonify);
 
+  const deleteBoard = id =>
+  fetch(BOARDS_URL + `/${id}`, {
+    method: "DELETE",
+  }).then(jsonify);
+
 export default {
   fetchCategories,
   fetchCards,
   fetchBehaviours,
   fetchUsers,
   fetchBoards,
-  postBoard
+  postBoard,
+  deleteBoard
 };
