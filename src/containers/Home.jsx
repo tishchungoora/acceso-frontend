@@ -5,7 +5,10 @@ export default class Home extends Component {
   render() {
     return (
       <div className="Home container-fluid">
-        <div id="banner" className="row justify-content-center mb-5"></div>
+        <div id="banner" className="row justify-content-center mb-4">
+          <img className="container-fluid" src={require('../assets/banner.jpeg')} alt="Acceso banner" />
+          <p>Source: https://pecsusa.com/</p>
+        </div>
         <div className="row justify-content-center">
           <div className="col-sm-10 mb-2">
             <h2>The web app for communicating intention and emotion with cards</h2>
@@ -28,7 +31,7 @@ export default class Home extends Component {
           </div>
         </div>
         <hr />
-        <div className="row justify-content-center mt-5 mb-5">
+        <div className="row justify-content-center mt-5">
           <iframe
             title="introduction"
             width="800"

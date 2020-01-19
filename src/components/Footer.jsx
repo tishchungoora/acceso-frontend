@@ -58,6 +58,10 @@ const Footer = () => {
               <p>
                 <a href="http://www.mypecs.com/" target={"_blank"}>
                   <small>My PECS</small>
+                </a>{" "}
+                |{" "}
+                <a href="https://pecsusa.com/" target={"_blank"}>
+                  <small>PECS USA</small>
                 </a>
               </p>
             </div>

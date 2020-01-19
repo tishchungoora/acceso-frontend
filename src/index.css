@@ -25,13 +25,13 @@ h6 {
 
 /* home page banner */
 
-#banner {
-  background-image: url("./assets/banner.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 5em;
-  min-height: 500px;
+#banner img {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+#banner p {
+  font-size: 0.75em;
 }
 
 /* footer */
