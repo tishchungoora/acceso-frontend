@@ -6,13 +6,15 @@ import API from "../adapters/API";
 export default class SavedBoardsPage extends Component {
   state = {
     boards: [],
+    displayedBoards: [],
     behaviours: []
   };
 
   setBoards = () => {
     API.fetchBoards().then(data =>
       this.setState({
-        boards: data.sort((a, b) => a.title.localeCompare(b.title))
+        displayedBoards: data.sort((a, b) => a.title.localeCompare(b.title)),
+        boards: data
       })
     );
   };
@@ -38,15 +40,22 @@ export default class SavedBoardsPage extends Component {
     this.setState({ boards });
   };
 
+  handleFilter = choice => {
+    let newBoards = this.state.boards.filter(b => b.behaviour.name === choice)
+    this.setState({
+      displayedBoards: newBoards
+    })
+  }
+
   render() {
-    const { boards, behaviours } = this.state;
-    const { handleDeletion } = this;
+    const { displayedBoards, behaviours } = this.state;
+    const { handleDeletion, handleFilter } = this;
 
     return (
       <div className="SavedBoardPage container-fluid">
-        <BehaviourSelector behaviours={behaviours} />
+        <BehaviourSelector behaviours={behaviours} handleFilter={handleFilter} />
         <hr />
-        {boards.map(board => (
+        {displayedBoards.map(board => (
           <SavedBoard
             key={board.id}
             board={board}

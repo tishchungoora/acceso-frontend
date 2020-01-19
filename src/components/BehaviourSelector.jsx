@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class BehaviourSelector extends Component {
   render() {
-    const { behaviours } = this.props;
+    const { behaviours, handleFilter } = this.props;
 
     return (
       <div className="BehaviourSelector row justify-content-center">
@@ -14,6 +14,7 @@ export default class BehaviourSelector extends Component {
               name="behaviours"
               id={behaviour.name}
               value={behaviour.name}
+              onClick={event => handleFilter(event.target.value)}
             />
             <label className="form-check-label" htmlFor={behaviour.name}>
               {behaviour.name}
