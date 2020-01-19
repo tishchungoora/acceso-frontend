@@ -36,16 +36,20 @@ export default class PecsContainer extends Component {
             />
           </div>
         ) : (
-          <div className="row justify-content-center">
-            <CategorySelector
-              categories={categories}
-              handleCategoryChange={handleCategoryChange}
-            />
-            <SubCategorySelector
-              subcategories={subcategories}
-              filterCards={filterCards}
-            />
-            <SwitchToSearch methodChange={methodChange} />
+          <div>
+            <div className="row justify-content-center">
+              <CategorySelector
+                categories={categories}
+                handleCategoryChange={handleCategoryChange}
+              />
+              <SubCategorySelector
+                subcategories={subcategories}
+                filterCards={filterCards}
+              />
+            </div>
+            <div className="row justify-content-center">
+              <SwitchToSearch methodChange={methodChange} />
+            </div>
           </div>
         )}
         <div className="Cards">
@@ -55,7 +59,8 @@ export default class PecsContainer extends Component {
           <div className="CardsBrowser row justify-content-center">
             {noSearchResults ? (
               <p className="lead">
-                Sorry, we couldn't find any matching results. Please try with a different word or filter by category
+                Sorry, we couldn't find any matching results. Please try with a
+                different word or filter by category
               </p>
             ) : (
               <CardCollection

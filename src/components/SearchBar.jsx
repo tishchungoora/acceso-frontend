@@ -13,35 +13,46 @@ export default class SearchBar extends Component {
 
     return (
       <div className="SearchBar">
-        <form
-          className="form-inline justify-content-center"
-          onSubmit={handleSearchSubmit}
-        >
-          <input
-            className="form-control m-2"
-            type="text"
-            placeholder="Search for..."
-            aria-label="Search"
-            onChange={handleSearchInputChange}
-            value={searchTerm}
-          />
-          <button
-            className="Magnifier btn btn-primary m-2"
-            type="submit"
-            title="Search"
-          >
-            <i className="fas fa-search"></i>
-          </button>
-          <button
-            className="Clear btn btn-primary m-2"
-            type="submit"
-            title="Clear search"
-            onClick={handleSearchClear}
-          >
-            <i className="fas fa-times"></i>
-          </button>
+        <div className="row justify-content-center">
+          <form className="form-inline" onSubmit={handleSearchSubmit}>
+            <div className="input-group m-2">
+              <div className="input-group-prepend">
+                <button
+                  className="Magnifier btn btn-primary"
+                  type="submit"
+                  title="Search"
+                >
+                  <i className="fas fa-search"></i>
+                </button>
+              </div>
+              <input
+                className="form-control"
+                type="text"
+                placeholder="Search for..."
+                aria-label="Search"
+                onChange={handleSearchInputChange}
+                value={searchTerm}
+              />
+              {searchTerm === "" ? (
+                true
+              ) : (
+                <div className="input-group-append">
+                  <button
+                    className="Clear btn btn-outline-secondary"
+                    type="submit"
+                    title="Clear search"
+                    onClick={handleSearchClear}
+                  >
+                    <i className="fas fa-times"></i>
+                  </button>
+                </div>
+              )}
+            </div>
+          </form>
+        </div>
+        <div className="row justify-content-center mt-2 mb-2">
           <SwitchToCategory methodChange={methodChange} />
-        </form>
+        </div>
       </div>
     );
   }

@@ -48,7 +48,8 @@ export default class PecsBoardPage extends Component {
         cat => cat.name === parentCategory
       ).children;
       this.setState({
-        subcategories: subcats.sort((a, b) => a.name.localeCompare(b.name))
+        subcategories: subcats.sort((a, b) => a.name.localeCompare(b.name)),
+        displayedCards: this.setParentCategoryCards(parentCategory)
       });
     } else {
       this.setState({
@@ -56,6 +57,13 @@ export default class PecsBoardPage extends Component {
         subcategories: []
       });
     }
+  };
+
+  setParentCategoryCards = parentCategory => {
+    let foundParent = this.state.categories.find(
+      cat => cat.name === parentCategory
+    );
+    return this.state.cards.filter(card => card.category.parent_id === foundParent.id);
   };
 
   filterCards = category => {
@@ -76,8 +84,10 @@ export default class PecsBoardPage extends Component {
   searchForPotentialMatching = () => {
     const newCards = this.state.cards.filter(
       c =>
-        c.title.toLowerCase().includes(this.state.searchTerm) ||
-        c.category.name.toLowerCase().includes(this.state.searchTerm)
+        c.title.toLowerCase().includes(this.state.searchTerm.toLowerCase()) ||
+        c.category.name
+          .toLowerCase()
+          .includes(this.state.searchTerm.toLowerCase())
     );
     if (newCards.length < 1) {
       this.setState({ noSearchResults: true });
@@ -193,10 +203,18 @@ export default class PecsBoardPage extends Component {
             resetBoard={resetBoard}
           />
         </div>
-        {cardsOnBoard.length === 0 ? true : (<div>
-          <Player playVoice={playVoice} stopVoice={stopVoice} played={played} />
-          <hr className="mb-2" />
-        </div>)}
+        {cardsOnBoard.length === 0 ? (
+          true
+        ) : (
+          <div>
+            <Player
+              playVoice={playVoice}
+              stopVoice={stopVoice}
+              played={played}
+            />
+            <hr className="mb-2" />
+          </div>
+        )}
         <div>
           <PecsContainer
             handleSearchInputChange={handleSearchInputChange}

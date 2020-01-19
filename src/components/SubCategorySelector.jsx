@@ -5,7 +5,7 @@ export default class SubCategorySelector extends Component {
     const { subcategories, filterCards } = this.props;
 
     return (
-      <div className="SubCategorySelector col-sm-3 m-2">
+      <div className="SubCategorySelector col m-2">
         <select
           className="form-control"
           id="subCategorySelector"
