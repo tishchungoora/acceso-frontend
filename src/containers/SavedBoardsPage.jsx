@@ -48,11 +48,14 @@ export default class SavedBoardsPage extends Component {
   };
 
   handleFilterClear = event => {
-    event.preventDefault()
+    event.preventDefault();
     this.setState({
       displayedBoards: this.state.boards
-    })
-  }
+    });
+    this.state.behaviours.map(
+      behaviour => (document.getElementById(behaviour.name).checked = false)
+    );
+  };
 
   render() {
     const { displayedBoards, behaviours } = this.state;
@@ -69,7 +72,7 @@ export default class SavedBoardsPage extends Component {
         {displayedBoards.length < 1 ? (
           <div className="row justify-content-center">
             <h3>There is currently no board to show...</h3>
-            </div>
+          </div>
         ) : (
           displayedBoards.map(board => (
             <SavedBoard
