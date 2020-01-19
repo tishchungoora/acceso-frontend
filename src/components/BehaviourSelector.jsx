@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class BehaviourSelector extends Component {
   render() {
-    const { behaviours, handleFilter } = this.props;
+    const { behaviours, handleFilter, handleFilterClear } = this.props;
 
     return (
       <div className="BehaviourSelector row justify-content-center">
@@ -25,6 +25,7 @@ export default class BehaviourSelector extends Component {
             className="Clear btn btn-primary m-2"
             type="submit"
             title="Clear"
+            onClick={handleFilterClear}
           >
             <i className="fas fa-times"></i>
           </button>

@@ -37,31 +37,48 @@ export default class SavedBoardsPage extends Component {
     API.deleteBoard(id);
 
     const boards = this.state.boards.filter(b => b.id !== id);
-    this.setState({ boards });
+    this.setState({ boards, displayedBoards: boards });
   };
 
   handleFilter = choice => {
-    let newBoards = this.state.boards.filter(b => b.behaviour.name === choice)
+    let newBoards = this.state.boards.filter(b => b.behaviour.name === choice);
     this.setState({
       displayedBoards: newBoards
+    });
+  };
+
+  handleFilterClear = event => {
+    event.preventDefault()
+    this.setState({
+      displayedBoards: this.state.boards
     })
   }
 
   render() {
     const { displayedBoards, behaviours } = this.state;
-    const { handleDeletion, handleFilter } = this;
+    const { handleDeletion, handleFilter, handleFilterClear } = this;
 
     return (
       <div className="SavedBoardPage container-fluid">
-        <BehaviourSelector behaviours={behaviours} handleFilter={handleFilter} />
+        <BehaviourSelector
+          behaviours={behaviours}
+          handleFilter={handleFilter}
+          handleFilterClear={handleFilterClear}
+        />
         <hr />
-        {displayedBoards.map(board => (
-          <SavedBoard
-            key={board.id}
-            board={board}
-            handleDeletion={handleDeletion}
-          />
-        ))}
+        {displayedBoards.length < 1 ? (
+          <div className="row justify-content-center">
+            <h3>There is currently no board to show...</h3>
+            </div>
+        ) : (
+          displayedBoards.map(board => (
+            <SavedBoard
+              key={board.id}
+              board={board}
+              handleDeletion={handleDeletion}
+            />
+          ))
+        )}
       </div>
     );
   }
