@@ -44,32 +44,17 @@ export default class Home extends Component {
                   <b>WHO IS IT FOR?</b>
                 </p>
               </div>
-              <div className="row">
-                <div className="col-sm-2 text-center">
-                  <h1>
-                    <i className="fas fa-users text-info"></i>
-                  </h1>
-                </div>
-                <div className="col-sm-9 ml-2 mt-2">
+              <div className="row justify-content-center">
+                <h1>
+                  <i className="fas fa-users text-info"></i>
+                </h1>
+              </div>
+              <div className="row justify-content-center">
+                <div className="col-sm-10 ml-2 mt-2 text-center">
                   <p>
-                    <b>acceso</b> is an easy-to-use web application aimed at
-                    social workers, parents and carers needing to communicate
+                    Social workers, parents and carers needing to communicate
                     intention and emotion with non-verbal autistic individuals.
                   </p>
-                </div>
-                <div className="row">
-                  <div className="col-sm-2 text-center">
-                    <h1>
-                      <i className="fas fa-users text-info"></i>
-                    </h1>
-                  </div>
-                  <div className="col-sm-9 ml-2 mt-2">
-                    <p>
-                      Features over{" "}
-                      {parseInt(this.state.cardNumber / 10, 10) * 10} visual
-                      cards
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>
@@ -84,7 +69,11 @@ export default class Home extends Component {
                   <h1 className="text-success">&#10122;</h1>
                 </div>
                 <div className="col-sm-10 ml-2 mt-2">
-                  <p>Select PECS cards to place on a board</p>
+                  <p>
+                    Select from over{" "}
+                    {parseInt(this.state.cardNumber / 10, 10) * 10} PECS cards
+                    to compose a board
+                  </p>
                 </div>
               </div>
               <div className="row">
@@ -110,28 +99,23 @@ export default class Home extends Component {
             <div className="col-sm-4">
               <div className="row justify-content-center">
                 <p className="lead">
-                  <b>OTHER USES</b>
+                  <b>WHO IS IT FOR?</b>
                 </p>
               </div>
-              <div className="row">
-                <div className="col-sm-1 text-center">
-                  <h1 className="text-success">&#10122;</h1>
-                </div>
-                <div className="col-sm-10 ml-2 mt-2">
+              <div className="row justify-content-center">
+                <h1>
+                  <i className="fas fa-ellipsis-h text-secondary"></i>
+                </h1>
+              </div>
+              <div className="row justify-content-center">
+                <div className="col-sm-10 ml-2 mt-2 text-center">
                   <p>
                     Suitable for highly functional autistic individuals with
-                    impaired speech
+                    impaired speech.
                   </p>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-sm-1 text-center">
-                  <h1 className="text-success">&#10123;</h1>
-                </div>
-                <div className="col-sm-10 ml-2 mt-2">
                   <p>
                     Educational and communication tool for young children who
-                    may have learning difficulties
+                    may have learning difficulties.
                   </p>
                 </div>
               </div>
