@@ -52,7 +52,7 @@ export default class PecsContainer extends Component {
             </div>
           </div>
         )}
-        <div className="Cards">
+        <div className="Cards mb-4">
           <div className="PecsCardsTitle row justify-content-center">
             <h1>PECS cards</h1>
           </div>

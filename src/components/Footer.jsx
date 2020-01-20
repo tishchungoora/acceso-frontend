@@ -3,11 +3,11 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div id="footerDiv">
+    <div id="Footer">
       <footer id="footer" className="py-4 bg-dark text-white-50">
         <div className="container-fluid text-center">
           <div className="row justify-content-center">
-            <div className="col-4">
+            <div className="col-sm-4">
               <small className="text-uppercase">Creator</small>
               <p>
                 <a href="https://github.com/tishchungoora" target={"_blank"}>
@@ -15,7 +15,7 @@ const Footer = () => {
                 </a>
               </p>
             </div>
-            <div className="col-4">
+            <div className="col-sm-4">
               <small className="text-uppercase">Tech Stack Used</small>
               <p>
                 <a href="https://reactjs.org/" target={"_blank"}>
@@ -53,7 +53,7 @@ const Footer = () => {
                 </a>
               </p>
             </div>
-            <div className="col-4">
+            <div className="col-sm-4">
               <small className="text-uppercase">Acknowledgements</small>
               <p>
                 <a href="http://www.mypecs.com/" target={"_blank"}>

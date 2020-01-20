@@ -62,7 +62,7 @@ export default class SavedBoardsPage extends Component {
     const { handleDeletion, handleFilter, handleFilterClear } = this;
 
     return (
-      <div className="SavedBoardPage container-fluid">
+      <div className="SavedBoardsPage container-fluid">
         <BehaviourSelector
           behaviours={behaviours}
           handleFilter={handleFilter}

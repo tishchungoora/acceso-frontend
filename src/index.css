@@ -1,9 +1,4 @@
-/* body */
-
-html,
-body > #root > div:not(#footerDiv) {
-  min-height: 100vh;
-}
+/* general */
 
 body {
   margin: 0;
@@ -23,6 +18,14 @@ h6 {
   font-family: "Love Ya Like A Sister";
 }
 
+#Navbar {
+  min-height: 60px;
+}
+
+#Footer {
+  min-height: 120px;
+}
+
 /* home page banner */
 
 #banner img {
@@ -34,11 +37,7 @@ h6 {
   font-size: 0.75em;
 }
 
-/* footer */
-
-footer {
-  margin-top: 40px;
-}
+/* footer colors */
 
 footer a {
   color: lightgrey;
@@ -82,8 +81,9 @@ footer a:visited {
 .PecsCardsTitle {
   background-color: lightskyblue;
   padding-top: 1em;
+  padding-bottom: 1em;
   margin-top: 0.75em;
-  border-radius: 0.75em 0.75em 0 0;
+  border-radius: 0.75em 0.75em 0.75em 0.75em;
 }
 
 .CardsBrowser {
@@ -101,6 +101,8 @@ footer a:visited {
   overflow-x: hidden;
   background-color: lightskyblue;
   border-radius: 0 0 0.75em 0.75em;
+  margin-top: -0.75em;
+
 }
 
 .CardCollection::-webkit-scrollbar {
