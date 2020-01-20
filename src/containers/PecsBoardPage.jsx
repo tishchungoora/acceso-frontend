@@ -63,7 +63,9 @@ export default class PecsBoardPage extends Component {
     let foundParent = this.state.categories.find(
       cat => cat.name === parentCategory
     );
-    return this.state.cards.filter(card => card.category.parent_id === foundParent.id);
+    return this.state.cards.filter(
+      card => card.category.parent_id === foundParent.id
+    );
   };
 
   filterCards = category => {

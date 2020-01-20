@@ -1,7 +1,24 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import API from "../adapters/API";
 
 export default class Home extends Component {
+  state = {
+    cardNumber: null
+  };
+
+  setCardNumber = () => {
+    API.fetchCards().then(data =>
+      this.setState({
+        cardNumber: data.length
+      })
+    );
+  };
+
+  componentDidMount() {
+    this.setCardNumber();
+  }
+
   render() {
     return (
       <div className="Home container-fluid">
@@ -39,6 +56,20 @@ export default class Home extends Component {
                     social workers, parents and carers needing to communicate
                     intention and emotion with non-verbal autistic individuals.
                   </p>
+                </div>
+                <div className="row">
+                  <div className="col-sm-2 text-center">
+                    <h1>
+                      <i className="fas fa-users text-info"></i>
+                    </h1>
+                  </div>
+                  <div className="col-sm-9 ml-2 mt-2">
+                    <p>
+                      Features over{" "}
+                      {parseInt(this.state.cardNumber / 10, 10) * 10} visual
+                      cards
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
