@@ -16,7 +16,7 @@ const Footer = () => {
               </p>
             </div>
             <div className="col-sm-4">
-              <small className="text-uppercase">Tech Stack Used</small>
+              <small className="text-uppercase">Tech Stack</small>
               <p>
                 <a href="https://reactjs.org/" target={"_blank"}>
                   <small>React</small>
@@ -62,6 +62,10 @@ const Footer = () => {
                 |{" "}
                 <a href="https://pecsusa.com/" target={"_blank"}>
                   <small>PECS USA</small>
+                </a>{" "}
+                |{" "}
+                <a href="https://www.flaticon.com/" target={"_blank"}>
+                  <small>Flaticon</small>
                 </a>
               </p>
             </div>
