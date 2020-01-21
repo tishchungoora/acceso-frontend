@@ -6,7 +6,6 @@ import Footer from "../components/Footer";
 import Home from "../containers/Home";
 import PecsBoardPage from "../containers/PecsBoardPage";
 import SavedBoardsPage from "../containers/SavedBoardsPage";
-import ResourcesPage from "../containers/ResourcesPage";
 import LoginPage from "./LoginPage";
 import SignupPage from "./SignupPage";
 import API from "../adapters/API";
@@ -50,7 +49,6 @@ export default class App extends Component {
             )}
           />
           <Route exact path="/saved-boards" component={SavedBoardsPage} />
-          <Route exact path="/resources" component={ResourcesPage} />
           <Route
             exact
             path="/login"
