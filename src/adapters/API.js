@@ -63,10 +63,6 @@ const fetchBehaviours = () => {
   return fetch(BEHAVIOURS_URL).then(jsonify);
 };
 
-const fetchUsers = () => {
-  return fetch(USERS_URL).then(jsonify);
-};
-
 const fetchBoards = () => {
   return fetch(BOARDS_URL).then(jsonify);
 };
@@ -91,7 +87,7 @@ export default {
   fetchCategories,
   fetchCards,
   fetchBehaviours,
-  fetchUsers,
+  // fetchUsers,
   fetchBoards,
   postBoard,
   deleteBoard,
