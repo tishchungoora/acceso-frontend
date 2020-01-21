@@ -50,7 +50,7 @@ export default class Home extends Component {
                 </h1>
               </div>
               <div className="row justify-content-center">
-                <div className="col-sm-10 ml-2 mt-2 text-center">
+                <div className="col-sm-10 mt-2 text-center">
                   <p>
                     Social workers, parents and carers needing to communicate
                     intention and emotion with non-verbal autistic individuals.
@@ -64,42 +64,42 @@ export default class Home extends Component {
                   <b>HOW IT WORKS</b>
                 </p>
               </div>
-              <div className="row">
-                <div className="col-sm-1 text-center">
-                  <h1 className="text-success">&#10122;</h1>
-                </div>
-                <div className="col-sm-10 ml-2 mt-2">
+              <div className="row justify-content-center">
+                <h1 className="text-success">&#10122;</h1>
+              </div>
+              <div className="row justify-content-center">
+                <div className="col-sm-10 text-center">
                   <p>
                     Select from over{" "}
                     {parseInt(this.state.cardNumber / 10, 10) * 10} PECS cards
-                    to compose a board
+                    to compose a board.
                   </p>
                 </div>
               </div>
-              <div className="row">
-                <div className="col-sm-1 text-center">
-                  <h1 className="text-success">&#10123;</h1>
-                </div>
-                <div className="col-sm-10 ml-2 mt-2">
+              <div className="row justify-content-center">
+                <h1 className="text-success">&#10123;</h1>
+              </div>
+              <div className="row justify-content-center">
+                <div className="col-sm-10 text-center">
                   <p>
                     Show the board or play the audio to communicate ideas,
-                    intention and emotion
+                    intention and emotion.
                   </p>
                 </div>
               </div>
-              <div className="row">
-                <div className="col-sm-1 text-center">
-                  <h1 className="text-success">&#10124;</h1>
-                </div>
-                <div className="col-sm-10 ml-2 mt-2">
-                  <p>Save the board for quick access in future</p>
+              <div className="row justify-content-center">
+                <h1 className="text-success">&#10124;</h1>
+              </div>
+              <div className="row justify-content-center">
+                <div className="col-sm-10 text-center">
+                  <p>Save the board for quick access in future.</p>
                 </div>
               </div>
             </div>
             <div className="col-sm-4">
               <div className="row justify-content-center">
                 <p className="lead">
-                  <b>WHO IS IT FOR?</b>
+                  <b>OTHER USE CASES</b>
                 </p>
               </div>
               <div className="row justify-content-center">
@@ -114,8 +114,8 @@ export default class Home extends Component {
                     impaired speech.
                   </p>
                   <p>
-                    Educational and communication tool for young children who
-                    may have learning difficulties.
+                    Serves as educational and communication tool for young
+                    children who may have learning difficulties.
                   </p>
                 </div>
               </div>
