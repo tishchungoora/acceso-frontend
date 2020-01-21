@@ -7,8 +7,7 @@ export default class Save extends Component {
     open: false,
     behaviours: [],
     title: "",
-    behaviourId: null,
-    userId: null
+    behaviourId: null
   };
 
   setBehaviours = () => {
@@ -19,17 +18,8 @@ export default class Save extends Component {
     );
   };
 
-  setUserId = () => {
-    API.fetchUsers().then(data =>
-      this.setState({
-        userId: data[0].id
-      })
-    );
-  };
-
   componentDidMount() {
     this.setBehaviours();
-    this.setUserId();
   }
 
   handleClick = () => {
@@ -61,7 +51,7 @@ export default class Save extends Component {
     let boardData = {
       title: this.state.title,
       behaviour_id: this.state.behaviourId,
-      user_id: this.state.userId,
+      user_id: this.props.user.id,
       cards: this.props.cardsOnBoard
     };
 

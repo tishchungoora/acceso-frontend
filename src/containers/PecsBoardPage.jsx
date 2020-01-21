@@ -105,7 +105,10 @@ export default class PecsBoardPage extends Component {
     event.preventDefault();
 
     if (this.state.searchTerm === "") {
-      this.setState({ displayedCards: this.state.cards, noSearchResults: false });
+      this.setState({
+        displayedCards: this.state.cards,
+        noSearchResults: false
+      });
     } else {
       this.searchForPotentialMatching();
     }
@@ -182,6 +185,7 @@ export default class PecsBoardPage extends Component {
       cardsOnBoard,
       played
     } = this.state;
+    const { user } = this.props;
     const {
       handleCategoryChange,
       filterCards,
@@ -203,6 +207,7 @@ export default class PecsBoardPage extends Component {
             cardsOnBoard={cardsOnBoard}
             removeCard={removeCard}
             resetBoard={resetBoard}
+            user={user}
           />
         </div>
         {cardsOnBoard.length === 0 ? (

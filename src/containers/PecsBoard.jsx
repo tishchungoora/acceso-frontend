@@ -4,7 +4,7 @@ import Save from "../components/Save";
 
 export default class PecsBoard extends Component {
   render() {
-    const { cardsOnBoard, removeCard, resetBoard } = this.props;
+    const { cardsOnBoard, removeCard, resetBoard, user } = this.props;
 
     return (
       <div className="PecsBoard">
@@ -40,7 +40,7 @@ export default class PecsBoard extends Component {
             <button className="btn btn-danger m-2" onClick={() => resetBoard()}>
               <i className="fas fa-eraser"></i> Reset
             </button>
-            <Save cardsOnBoard={cardsOnBoard} />
+            {(user !== null) ? (<Save cardsOnBoard={cardsOnBoard} user={user} />) : <div></div>}
           </div>
         )}
       </div>
