@@ -105,7 +105,7 @@ export default class PecsBoardPage extends Component {
     event.preventDefault();
 
     if (this.state.searchTerm === "") {
-      this.setState({ displayedCards: this.state.cards });
+      this.setState({ displayedCards: this.state.cards, noSearchResults: false });
     } else {
       this.searchForPotentialMatching();
     }
