@@ -51,7 +51,6 @@ export default class Save extends Component {
     let boardData = {
       title: this.state.title,
       behaviour_id: this.state.behaviourId,
-      user_id: this.props.user.id,
       cards: this.props.cardsOnBoard
     };
 

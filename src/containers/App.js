@@ -7,7 +7,7 @@ import Home from "../containers/Home";
 import PecsBoardPage from "../containers/PecsBoardPage";
 import SavedBoardsPage from "../containers/SavedBoardsPage";
 import LoginPage from "./LoginPage";
-import SignupPage from "./SignupPage";
+// import SignupPage from "./SignupPage";
 import API from "../adapters/API";
 
 export default class App extends Component {
@@ -33,22 +33,21 @@ export default class App extends Component {
 
   render() {
     const { handleLogin } = this;
-    const { user } = this.state
+    const { user } = this.state;
 
     return (
       <Router>
         <div className="App">
-          {this.state.user && <span>Hello, {this.state.user.first_name}!</span>}
-          <NavBar />
+          <NavBar user={user} />
           <Route exact path="/" component={Home} />
           <Route
             exact
             path="/pecs-board"
-            render={routeProps => (
-              <PecsBoardPage {...routeProps} user={user} />
-            )}
+            render={routeProps => <PecsBoardPage {...routeProps} user={user} />}
           />
-          <Route exact path="/saved-boards" component={SavedBoardsPage} />
+          {user && (
+            <Route exact path="/saved-boards" component={SavedBoardsPage} />
+          )}
           <Route
             exact
             path="/login"
@@ -56,13 +55,13 @@ export default class App extends Component {
               <LoginPage {...routeProps} login={handleLogin} />
             )}
           />
-          <Route
+          {/* <Route
             exact
             path="/signup"
             render={routeProps => (
               <SignupPage {...routeProps} signup={handleLogin} />
             )}
-          />
+          /> */}
           <Footer />
         </div>
       </Router>
