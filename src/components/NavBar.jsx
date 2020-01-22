@@ -50,7 +50,7 @@ export default class NavBar extends Component {
               </li> */}
             </ul>
             {user && (
-              <span className="mr-3 text-light">Howdy {user.first_name}!</span>
+              <span className="greeting mr-3 text-light">Howdy {user.first_name}!</span>
             )}
             {user ? (
               <form className="form-inline my-2 my-lg-0">

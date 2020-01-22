@@ -55,14 +55,26 @@ export default class App extends Component {
       <Router>
         <div className="App">
           <NavBar user={user} handleLogout={handleLogout} />
-          <Route exact path="/" render={routeProps => <Home {...routeProps} cards={cards} />} />
+          <Route
+            exact
+            path="/"
+            render={routeProps => <Home {...routeProps} cards={cards} />}
+          />
           <Route
             exact
             path="/pecs-board"
-            render={routeProps => <PecsBoardPage {...routeProps} user={user} cards={cards} />}
+            render={routeProps => (
+              <PecsBoardPage {...routeProps} user={user} cards={cards} />
+            )}
           />
           {user && (
-            <Route exact path="/saved-boards" component={SavedBoardsPage} />
+            <Route
+              exact
+              path="/saved-boards"
+              render={routeProps => (
+                <SavedBoardsPage {...routeProps} user={user} />
+              )}
+            />
           )}
           <Route
             exact
