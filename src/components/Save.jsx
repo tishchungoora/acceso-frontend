@@ -65,7 +65,7 @@ export default class Save extends Component {
     return (
       <div className="Save">
         <button className="btn btn-info m-2" onClick={this.handleClick}>
-          <i className="fas fa-save"></i> Save
+          <i className="fas fa-save"></i> Save new board
         </button>
 
         <Modal

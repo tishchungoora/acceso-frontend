@@ -38,7 +38,7 @@ export default class PecsBoard extends Component {
         ) : (
           <div className="row mt-3 justify-content-center">
             <button className="btn btn-danger m-2" onClick={() => resetBoard()}>
-              <i className="fas fa-eraser"></i> Reset
+              <i className="fas fa-eraser"></i> Clear the board
             </button>
             {user && <Save cardsOnBoard={cardsOnBoard} />}
           </div>

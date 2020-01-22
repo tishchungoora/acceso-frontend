@@ -12,13 +12,13 @@ import API from "../adapters/API";
 export default class App extends Component {
   state = {
     user: null,
-    cards: []
+    cardNumber: null
   };
 
-  setCards = () => {
+  setCardNumber = () => {
     API.fetchCards().then(data =>
       this.setState({
-        cards: data.sort((a, b) => a.title.localeCompare(b.title))
+        cardNumber: data.length
       })
     );
   };
@@ -28,7 +28,7 @@ export default class App extends Component {
     API.validateUser()
       .then(user => this.setUser(user))
       .catch(console.error);
-    this.setCards();
+    this.setCardNumber();
   }
 
   setUser = user => {
@@ -48,7 +48,7 @@ export default class App extends Component {
 
   render() {
     const { handleLogin, handleLogout } = this;
-    const { user, cards } = this.state;
+    const { user, cardNumber } = this.state;
 
     return (
       <Router>
@@ -57,14 +57,14 @@ export default class App extends Component {
           <Route
             exact
             path="/"
-            render={routeProps => <Home {...routeProps} cards={cards} />}
+            render={routeProps => (
+              <Home {...routeProps} cardNumber={cardNumber} />
+            )}
           />
           <Route
             exact
             path="/pecs-board"
-            render={routeProps => (
-              <PecsBoardPage {...routeProps} user={user} cards={cards} />
-            )}
+            render={routeProps => <PecsBoardPage {...routeProps} user={user} />}
           />
           {user && (
             <Route

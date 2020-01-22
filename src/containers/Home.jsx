@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default class Home extends Component {
   render() {
-    const { cards } = this.props;
+    const { cardNumber } = this.props;
 
     return (
       <div className="Home container-fluid">
@@ -55,7 +55,7 @@ export default class Home extends Component {
               <div className="row justify-content-center">
                 <div className="col-sm-10 text-center">
                   <p>
-                    Select from over {parseInt(cards.length / 10, 10) * 10} PECS
+                    Select from over {parseInt(cardNumber / 10, 10) * 10} PECS
                     cards to compose a board.
                   </p>
                 </div>
