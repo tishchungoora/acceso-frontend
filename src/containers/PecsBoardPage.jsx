@@ -76,10 +76,7 @@ export default class PecsBoardPage extends Component {
   searchForPotentialMatching = () => {
     const newCards = this.state.cards.filter(
       c =>
-        c.title.toLowerCase().includes(this.state.searchTerm.toLowerCase()) ||
-        c.category.name
-          .toLowerCase()
-          .includes(this.state.searchTerm.toLowerCase())
+        c.title.toLowerCase().includes(this.state.searchTerm.toLowerCase())
     );
     if (newCards.length < 1) {
       this.setState({ noSearchResults: true });

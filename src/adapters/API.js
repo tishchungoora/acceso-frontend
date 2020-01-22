@@ -52,8 +52,8 @@ const validateUser = () => {
 };
 
 const clearToken = () => {
-  localStorage.removeItem("token")
-}
+  localStorage.removeItem("token");
+};
 
 const fetchCategories = () => {
   return fetch(CATEGORIES_URL).then(jsonify);
