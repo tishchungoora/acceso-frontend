@@ -22,7 +22,7 @@ export default class LoginPage extends Component {
 
   render() {
     return (
-      <div className="login mb-5">
+      <div className="login m-5">
         <div className="row justify-content-center">
           <div className="login-container mt-5 col-sm-4">
             <h2 className="text-center mb-5">Log into your account</h2>

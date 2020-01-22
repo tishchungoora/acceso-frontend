@@ -38,11 +38,11 @@ export default class NavBar extends Component {
                   PECS Board
                 </Link>
               </li>
-              <li className="nav-item">
+              {user && (<li className="nav-item">
                 <Link className="nav-link" to="/saved-boards">
                   Saved Boards
                 </Link>
-              </li>
+              </li>)}
               {/* <li className="nav-item">
                 <Link className="nav-link" to="/signup">
                   Sign up
