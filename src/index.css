@@ -41,6 +41,10 @@ h6 {
   color: white;
 }
 
+.embed-responsive {
+  max-width: 800px;
+}
+
 /* footer colors */
 
 footer a {

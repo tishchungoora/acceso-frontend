@@ -73,7 +73,7 @@ const Footer = () => {
           <div>
             <small>&copy; Acceso</small> |{" "}
             <a href="/" target={"_blank"}>
-              <small>Privacy Policy</small>
+              <small>Terms and Conditions</small>
             </a>
           </div>
         </div>

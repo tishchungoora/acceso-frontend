@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default class Home extends Component {
   render() {
-    const { cards } = this.props
+    const { cards } = this.props;
 
     return (
       <div className="Home container-fluid">
@@ -55,9 +55,8 @@ export default class Home extends Component {
               <div className="row justify-content-center">
                 <div className="col-sm-10 text-center">
                   <p>
-                    Select from over{" "}
-                    {parseInt(cards.length / 10, 10) * 10} PECS cards
-                    to compose a board.
+                    Select from over {parseInt(cards.length / 10, 10) * 10} PECS
+                    cards to compose a board.
                   </p>
                 </div>
               </div>
@@ -109,15 +108,15 @@ export default class Home extends Component {
         </div>
         <hr />
         <div className="row justify-content-center mt-5">
-          <iframe
-            title="introduction"
-            width="800"
-            height="450"
-            src="https://www.youtube.com/embed/Lk4qs8jGN4U"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+          <div className="embed-responsive embed-responsive-16by9">
+            <iframe
+              title="introduction"
+              src="https://www.youtube.com/embed/Lk4qs8jGN4U"
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
         <hr />
         <div className="container-fluid mt-5 mb-5">
