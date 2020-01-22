@@ -7,7 +7,7 @@ import API from "../adapters/API";
 export default class PecsBoardPage extends Component {
   state = {
     cards: this.props.cards,
-    displayedCards: this.props.displayedCards,
+    displayedCards: this.props.cards,
     categories: [],
     subcategories: [],
     searchTerm: "",
@@ -24,20 +24,10 @@ export default class PecsBoardPage extends Component {
       })
     );
   };
-
-  // setCards = () => {
-  //   API.fetchCards().then(data =>
-  //     this.setState({
-  //       displayedCards: data.sort((a, b) => a.title.localeCompare(b.title)),
-  //       cards: data
-  //     })
-  //   );
-  // };
-
+  
   componentDidMount() {
     window.scrollTo(0, 0);
     this.setCategories();
-    // this.setCards();
   }
 
   handleCategoryChange = parentCategory => {

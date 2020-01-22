@@ -13,15 +13,13 @@ import API from "../adapters/API";
 export default class App extends Component {
   state = {
     user: null,
-    cards: [],
-    displayedCards: []
+    cards: []
   };
 
   setCards = () => {
     API.fetchCards().then(data =>
       this.setState({
-        displayedCards: data.sort((a, b) => a.title.localeCompare(b.title)),
-        cards: data
+        cards: data.sort((a, b) => a.title.localeCompare(b.title))
       })
     );
   };
@@ -51,17 +49,17 @@ export default class App extends Component {
 
   render() {
     const { handleLogin, handleLogout } = this;
-    const { user, cards, displayedCards } = this.state;
+    const { user, cards } = this.state;
 
     return (
       <Router>
         <div className="App">
           <NavBar user={user} handleLogout={handleLogout} />
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" render={routeProps => <Home {...routeProps} cards={cards} />} />
           <Route
             exact
             path="/pecs-board"
-            render={routeProps => <PecsBoardPage {...routeProps} user={user} cards={cards} displayedCards={displayedCards} />}
+            render={routeProps => <PecsBoardPage {...routeProps} user={user} cards={cards} />}
           />
           {user && (
             <Route exact path="/saved-boards" component={SavedBoardsPage} />

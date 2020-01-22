@@ -1,25 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import API from "../adapters/API";
 
 export default class Home extends Component {
-  state = {
-    cardNumber: null
-  };
-
-  setCardNumber = () => {
-    API.fetchCards().then(data =>
-      this.setState({
-        cardNumber: data.length
-      })
-    );
-  };
-
-  componentDidMount() {
-    this.setCardNumber();
-  }
-
   render() {
+    const { cards } = this.props
+
     return (
       <div className="Home container-fluid">
         <div id="banner" className="row justify-content-center mb-4">
@@ -71,7 +56,7 @@ export default class Home extends Component {
                 <div className="col-sm-10 text-center">
                   <p>
                     Select from over{" "}
-                    {parseInt(this.state.cardNumber / 10, 10) * 10} PECS cards
+                    {parseInt(cards.length / 10, 10) * 10} PECS cards
                     to compose a board.
                   </p>
                 </div>
