@@ -124,9 +124,7 @@ footer a:visited {
   min-height: 3em;
 }
 
-.card-body .btn {
-  height: 3em;
-  width: 3em;
+.btnArea .btn {
   border-radius: 50%;
 }
 
