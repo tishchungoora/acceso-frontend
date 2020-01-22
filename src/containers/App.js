@@ -7,7 +7,6 @@ import Home from "../containers/Home";
 import PecsBoardPage from "../containers/PecsBoardPage";
 import SavedBoardsPage from "../containers/SavedBoardsPage";
 import LoginPage from "./LoginPage";
-// import SignupPage from "./SignupPage";
 import API from "../adapters/API";
 
 export default class App extends Component {
@@ -83,13 +82,6 @@ export default class App extends Component {
               <LoginPage {...routeProps} login={handleLogin} />
             )}
           />
-          {/* <Route
-            exact
-            path="/signup"
-            render={routeProps => (
-              <SignupPage {...routeProps} signup={handleLogin} />
-            )}
-          /> */}
           <Footer />
         </div>
       </Router>
