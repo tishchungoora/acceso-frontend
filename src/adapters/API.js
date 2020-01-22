@@ -51,6 +51,10 @@ const validateUser = () => {
   }
 };
 
+const clearToken = () => {
+  localStorage.removeItem("token")
+}
+
 const fetchCategories = () => {
   return fetch(CATEGORIES_URL).then(jsonify);
 };
@@ -87,11 +91,11 @@ export default {
   fetchCategories,
   fetchCards,
   fetchBehaviours,
-  // fetchUsers,
   fetchBoards,
   postBoard,
   deleteBoard,
   login,
   signUp,
-  validateUser
+  validateUser,
+  clearToken
 };

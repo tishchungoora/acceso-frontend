@@ -7,7 +7,7 @@ export default class NavBar extends Component {
   };
 
   render() {
-    const { user } = this.props;
+    const { user, handleLogout } = this.props;
 
     return (
       <div id="Navbar">
@@ -54,8 +54,8 @@ export default class NavBar extends Component {
             )}
             {user ? (
               <form className="form-inline my-2 my-lg-0">
-                <Link to="/logout">
-                  <button className="btn btn-sm btn-danger my-2 my-sm-0">
+                <Link to="/">
+                  <button className="btn btn-sm btn-danger my-2 my-sm-0" onClick={handleLogout}>
                     Log out
                   </button>
                 </Link>

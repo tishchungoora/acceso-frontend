@@ -29,16 +29,21 @@ export default class App extends Component {
     API.login(loginData).then(user => this.setUser(user));
   };
 
+  handleLogout = () => {
+    this.setState({ user: null });
+    API.clearToken()
+  };
+
   handleSignup = () => {};
 
   render() {
-    const { handleLogin } = this;
+    const { handleLogin, handleLogout } = this;
     const { user } = this.state;
 
     return (
       <Router>
         <div className="App">
-          <NavBar user={user} />
+          <NavBar user={user} handleLogout={handleLogout} />
           <Route exact path="/" component={Home} />
           <Route
             exact
