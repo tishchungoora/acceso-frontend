@@ -2,7 +2,6 @@ const API_ENDPOINT = "http://localhost:3000/api/v1";
 const CATEGORIES_URL = `${API_ENDPOINT}/categories`;
 const CARDS_URL = `${API_ENDPOINT}/cards`;
 const BEHAVIOURS_URL = `${API_ENDPOINT}/behaviours`;
-// const USERS_URL = `${API_ENDPOINT}/users`;
 const LOGIN_URL = `${API_ENDPOINT}/login`;
 const VALIDATE_URL = `${API_ENDPOINT}/validate_user`;
 const BOARDS_URL = `${API_ENDPOINT}/boards`;
@@ -23,16 +22,6 @@ const login = loginData =>
       localStorage.setItem("token", data.token);
       return data.user;
     });
-
-// const signUp = signupData =>
-//   fetch(USERS_URL, {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//       Accept: "application/json"
-//     },
-//     body: JSON.stringify({ user: signupData })
-//   }).then(jsonify);
 
 const validateUser = () => {
   if (localStorage.token) {
@@ -95,7 +84,6 @@ export default {
   postBoard,
   deleteBoard,
   login,
-  // signUp,
   validateUser,
   clearToken
 };
