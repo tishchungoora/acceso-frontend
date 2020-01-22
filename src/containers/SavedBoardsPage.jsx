@@ -13,9 +13,10 @@ export default class SavedBoardsPage extends Component {
   setBoards = () => {
     API.fetchBoards().then(data =>
       this.setState({
-        displayedBoards: data.filter(board => board.user.id === this.props.user.id),
-        boards: data
-      }))
+        boards: data.filter(board => board.user.id === this.props.user.id),
+        displayedBoards: data.filter(board => board.user.id === this.props.user.id)
+      })
+    );
   };
 
   setBehaviours = () => {
