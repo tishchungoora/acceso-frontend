@@ -11,7 +11,7 @@ export default class SubCategorySelector extends Component {
           id="subCategorySelector"
           onChange={event => filterCards(event.target.value)}
         >
-          <option value="">Choose subcategory...</option>
+          <option value="">2. Choose subcategory...</option>
           {subcategories.map(subcat => (
             <option key={subcat.id} value={subcat.name}>
               {subcat.name}

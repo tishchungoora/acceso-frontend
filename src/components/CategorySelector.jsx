@@ -13,7 +13,7 @@ export default class CategorySelector extends Component {
             handleCategoryChange(event.target.value);
           }}
         >
-          <option value="All">Choose category...</option>
+          <option value="All">1. Choose category...</option>
           <option value="All">All</option>
           {categories.map(category => (
             <option key={category.id} value={category.name}>
