@@ -85,9 +85,9 @@ export default class Card extends Component {
         </Modal>
 
         <img className="card-img-top" src={card.image_url} alt={card.title} />
-        <div className="card-body text-center">
+        <div className="btnArea text-center">
           <button
-            className="btn btn-warning btn-lg"
+            className="btn btn-warning btn-sm m-2"
             onClick={() => selectCard(card)}
           >
             <i className="fas fa-plus"></i>

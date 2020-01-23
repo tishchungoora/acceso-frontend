@@ -14,7 +14,8 @@ export default class PecsBoardPage extends Component {
     noSearchResults: false,
     methodSwitch: false,
     cardsOnBoard: [],
-    played: false
+    played: false,
+    successFired: false
   };
 
   setCategories = () => {
@@ -48,7 +49,8 @@ export default class PecsBoardPage extends Component {
         cat => cat.name === parentCategory
       ).children;
       this.setState({
-        subcategories: subcats.sort((a, b) => a.name.localeCompare(b.name))
+        subcategories: subcats.sort((a, b) => a.name.localeCompare(b.name)),
+        displayedCards: this.setParentCategoryCards(parentCategory)
       });
     } else {
       this.setState({
@@ -56,6 +58,15 @@ export default class PecsBoardPage extends Component {
         subcategories: []
       });
     }
+  };
+
+  setParentCategoryCards = parentCategory => {
+    let foundParent = this.state.categories.find(
+      cat => cat.name === parentCategory
+    );
+    return this.state.cards.filter(
+      card => card.category.parent_id === foundParent.id
+    );
   };
 
   filterCards = category => {
@@ -74,10 +85,8 @@ export default class PecsBoardPage extends Component {
     });
 
   searchForPotentialMatching = () => {
-    const newCards = this.state.cards.filter(
-      c =>
-        c.title.toLowerCase().includes(this.state.searchTerm) ||
-        c.category.name.toLowerCase().includes(this.state.searchTerm)
+    const newCards = this.state.cards.filter(c =>
+      c.title.toLowerCase().includes(this.state.searchTerm.toLowerCase())
     );
     if (newCards.length < 1) {
       this.setState({ noSearchResults: true });
@@ -93,7 +102,10 @@ export default class PecsBoardPage extends Component {
     event.preventDefault();
 
     if (this.state.searchTerm === "") {
-      this.setState({ displayedCards: this.state.cards });
+      this.setState({
+        displayedCards: this.state.cards,
+        noSearchResults: false
+      });
     } else {
       this.searchForPotentialMatching();
     }
@@ -144,7 +156,7 @@ export default class PecsBoardPage extends Component {
     let wordSet = this.state.cardsOnBoard.map(card => card.title).join(", ");
     window.responsiveVoice.enableEstimationTimeout = false;
     window.responsiveVoice.speak(wordSet, "UK English Female", {
-      rate: 0.75,
+      rate: 0.85,
       onend: this.toggleToPlay
     });
     this.setState({ played: true });
@@ -159,6 +171,11 @@ export default class PecsBoardPage extends Component {
     this.setState({ played: false });
   };
 
+  displaySuccessAlert = () => {
+    this.setState({ successFired: true });
+    setTimeout(() => {this.setState({successFired: false})}, 4000)
+  };
+
   render() {
     const {
       categories,
@@ -168,8 +185,10 @@ export default class PecsBoardPage extends Component {
       noSearchResults,
       methodSwitch,
       cardsOnBoard,
-      played
+      played,
+      successFired
     } = this.state;
+    const { user } = this.props;
     const {
       handleCategoryChange,
       filterCards,
@@ -181,22 +200,46 @@ export default class PecsBoardPage extends Component {
       playVoice,
       stopVoice,
       removeCard,
-      resetBoard
+      resetBoard,
+      displaySuccessAlert
     } = this;
 
     return (
       <div className="PecsBoardPage container-fluid">
+        {successFired ? (
+          <div
+            className="Alert row alert alert-success justify-content-center"
+            role="alert"
+          >
+            <p>Your board has been successfully created.{" "}
+            <a href="/saved-boards" className="alert-link">
+              Visit your Saved Boards to find it.
+            </a></p>
+          </div>
+        ) : (
+          <div></div>
+        )}
         <div className="PecsBoardArea row justify-content-center pt-3 mb-3">
           <PecsBoard
             cardsOnBoard={cardsOnBoard}
             removeCard={removeCard}
             resetBoard={resetBoard}
+            user={user}
+            displaySuccessAlert={displaySuccessAlert}
           />
         </div>
-        <div>
-          <Player playVoice={playVoice} stopVoice={stopVoice} played={played} />
-        </div>
-        <hr className="mb-5" />
+        {cardsOnBoard.length === 0 ? (
+          true
+        ) : (
+          <div>
+            <Player
+              playVoice={playVoice}
+              stopVoice={stopVoice}
+              played={played}
+            />
+            <hr className="mb-2" />
+          </div>
+        )}
         <div>
           <PecsContainer
             handleSearchInputChange={handleSearchInputChange}
