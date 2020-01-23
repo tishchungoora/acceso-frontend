@@ -85,10 +85,11 @@ export default class Footer extends Component {
             </div>
             <div className="row justify-content-center">
               <div className="col-sm-2">
-                <small>© acceso</small>
                 <button className="btn btn-link text-white">
                   <small onClick={this.handleClick}>Terms and Conditions</small>
                 </button>
+                <br />
+                <small>© acceso</small>
               </div>
 
               <Modal
