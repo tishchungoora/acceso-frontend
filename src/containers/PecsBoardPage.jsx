@@ -173,7 +173,7 @@ export default class PecsBoardPage extends Component {
 
   displaySuccessAlert = () => {
     this.setState({ successFired: true });
-    setTimeout(() => {this.setState({successFired: false})}, 3000)
+    setTimeout(() => {this.setState({successFired: false})}, 4000)
   };
 
   render() {
@@ -213,7 +213,7 @@ export default class PecsBoardPage extends Component {
           >
             <p>Your board has been successfully created.{" "}
             <a href="/saved-boards" className="alert-link">
-              Visit your saved boards to find it.
+              Visit your Saved Boards to find it.
             </a></p>
           </div>
         ) : (
