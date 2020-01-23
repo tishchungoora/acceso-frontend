@@ -4,7 +4,7 @@ import Save from "../components/Save";
 
 export default class PecsBoard extends Component {
   render() {
-    const { cardsOnBoard, removeCard, resetBoard, user } = this.props;
+    const { cardsOnBoard, removeCard, resetBoard, user, displaySuccessAlert } = this.props;
 
     return (
       <div className="PecsBoard">
@@ -14,15 +14,15 @@ export default class PecsBoard extends Component {
         <div className="row justify-content-center m-2">
           {cardsOnBoard.length === 0 ? (
             <p className="lead text-center">
-              <i className="fas fa-arrow-circle-right"></i> Select up to 6 PECS cards by searching or filtering by
-              category
+              <i className="fas fa-arrow-circle-right"></i> Select up to 6 PECS
+              cards by searching or filtering by category
             </p>
           ) : (
             <p className="lead text-center">
-              <i className="fas fa-arrow-circle-right"></i> Show the board, play the sequence, reset or save
+              <i className="fas fa-arrow-circle-right"></i> Show the board, play
+              the sequence, reset or save
             </p>
           )}
-          
         </div>
         <div className="BoardCards justify-content-center">
           {cardsOnBoard.map((card, index) => (
@@ -40,7 +40,7 @@ export default class PecsBoard extends Component {
             <button className="btn btn-danger m-2" onClick={() => resetBoard()}>
               <i className="fas fa-eraser"></i> Clear the board
             </button>
-            {user && <Save cardsOnBoard={cardsOnBoard} />}
+            {user && <Save cardsOnBoard={cardsOnBoard} displaySuccessAlert={displaySuccessAlert} />}
           </div>
         )}
       </div>

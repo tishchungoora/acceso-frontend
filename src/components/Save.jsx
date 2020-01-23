@@ -61,6 +61,7 @@ export default class Save extends Component {
 
   render() {
     const { behaviours } = this.state;
+    const { displaySuccessAlert } = this.props
 
     return (
       <div className="Save">
@@ -79,7 +80,7 @@ export default class Save extends Component {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <form onSubmit={event => this.handleConfirmation(event)}>
+            <form onSubmit={event => {this.handleConfirmation(event); displaySuccessAlert()}}>
               <div className="form-group">
                 <label htmlFor="boardTitle" className="col-form-label">
                   Title:

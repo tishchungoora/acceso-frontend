@@ -14,7 +14,8 @@ export default class PecsBoardPage extends Component {
     noSearchResults: false,
     methodSwitch: false,
     cardsOnBoard: [],
-    played: false
+    played: false,
+    successFired: false
   };
 
   setCategories = () => {
@@ -33,11 +34,11 @@ export default class PecsBoardPage extends Component {
       })
     );
   };
-  
+
   componentDidMount() {
     window.scrollTo(0, 0);
     this.setCategories();
-    this.setCards()
+    this.setCards();
   }
 
   handleCategoryChange = parentCategory => {
@@ -84,9 +85,8 @@ export default class PecsBoardPage extends Component {
     });
 
   searchForPotentialMatching = () => {
-    const newCards = this.state.cards.filter(
-      c =>
-        c.title.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    const newCards = this.state.cards.filter(c =>
+      c.title.toLowerCase().includes(this.state.searchTerm.toLowerCase())
     );
     if (newCards.length < 1) {
       this.setState({ noSearchResults: true });
@@ -171,6 +171,11 @@ export default class PecsBoardPage extends Component {
     this.setState({ played: false });
   };
 
+  displaySuccessAlert = () => {
+    this.setState({ successFired: true });
+    setTimeout(() => {this.setState({successFired: false})}, 3000)
+  };
+
   render() {
     const {
       categories,
@@ -180,7 +185,8 @@ export default class PecsBoardPage extends Component {
       noSearchResults,
       methodSwitch,
       cardsOnBoard,
-      played
+      played,
+      successFired
     } = this.state;
     const { user } = this.props;
     const {
@@ -194,17 +200,32 @@ export default class PecsBoardPage extends Component {
       playVoice,
       stopVoice,
       removeCard,
-      resetBoard
+      resetBoard,
+      displaySuccessAlert
     } = this;
 
     return (
       <div className="PecsBoardPage container-fluid">
+        {successFired ? (
+          <div
+            className="Alert row alert alert-success justify-content-center"
+            role="alert"
+          >
+            <p>Your board has been successfully created.{" "}
+            <a href="/saved-boards" className="alert-link">
+              Visit your saved boards to find it.
+            </a></p>
+          </div>
+        ) : (
+          <div></div>
+        )}
         <div className="PecsBoardArea row justify-content-center pt-3 mb-3">
           <PecsBoard
             cardsOnBoard={cardsOnBoard}
             removeCard={removeCard}
             resetBoard={resetBoard}
             user={user}
+            displaySuccessAlert={displaySuccessAlert}
           />
         </div>
         {cardsOnBoard.length === 0 ? (

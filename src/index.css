@@ -36,7 +36,9 @@ h6 {
   min-height: 120px;
 }
 
-.PecsBoardPage, .SavedBoardsPage, .LoginPage {
+.PecsBoardPage,
+.SavedBoardsPage,
+.LoginPage {
   min-height: 100vh;
 }
 
@@ -196,6 +198,15 @@ footer a:visited {
   background-color: #212529;
   border-radius: 0.75em;
   min-height: 3em;
+}
+
+.PecsBoardPage .Alert {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.PecsBoardPage .Alert p {
+  padding-bottom: 0px;
 }
 
 /* search and filter */
