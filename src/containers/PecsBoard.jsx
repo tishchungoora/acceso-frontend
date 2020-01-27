@@ -4,7 +4,13 @@ import Save from "../components/Save";
 
 export default class PecsBoard extends Component {
   render() {
-    const { cardsOnBoard, removeCard, resetBoard, user, displaySuccessAlert } = this.props;
+    const {
+      cardsOnBoard,
+      removeCard,
+      resetBoard,
+      user,
+      displaySuccessAlert
+    } = this.props;
 
     return (
       <div className="PecsBoard">
@@ -19,8 +25,13 @@ export default class PecsBoard extends Component {
             </p>
           ) : (
             <p className="lead text-center">
-              <i className="fas fa-arrow-circle-right"></i> Show the board, play
-              the sequence, reset or save
+              <i className="fas fa-arrow-circle-right"></i> Play the sequence,
+              edit,{" "}
+              {user ? (
+                <span>clear or save the board</span>
+              ) : (
+                <span>or clear the board</span>
+              )}
             </p>
           )}
         </div>
@@ -40,7 +51,12 @@ export default class PecsBoard extends Component {
             <button className="btn btn-danger m-2" onClick={() => resetBoard()}>
               <i className="fas fa-eraser"></i> Clear the board
             </button>
-            {user && <Save cardsOnBoard={cardsOnBoard} displaySuccessAlert={displaySuccessAlert} />}
+            {user && (
+              <Save
+                cardsOnBoard={cardsOnBoard}
+                displaySuccessAlert={displaySuccessAlert}
+              />
+            )}
           </div>
         )}
       </div>
