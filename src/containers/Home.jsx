@@ -7,7 +7,7 @@ export default class Home extends Component {
 
     return (
       <div className="Home container-fluid">
-        <div id="banner" className="row justify-content-center mb-4">
+        <div id="banner" className="text-center mb-4">
           <img
             className="container-fluid"
             src={require("../assets/banner.jpeg")}

@@ -44,6 +44,11 @@ h6 {
 
 /* home page */
 
+#banner {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
 #banner img {
   padding-right: 0px;
   padding-left: 0px;
