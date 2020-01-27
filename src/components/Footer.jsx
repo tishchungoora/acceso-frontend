@@ -70,7 +70,7 @@ export default class Footer extends Component {
                 <small className="text-uppercase">Acknowledgements</small>
                 <p>
                   <a href="http://www.mypecs.com/" target={"_blank"}>
-                    <small>My PECS</small>
+                    <small>MyPECS.com</small>
                   </a>{" "}
                   |{" "}
                   <a href="https://pecsusa.com/" target={"_blank"}>
@@ -79,6 +79,10 @@ export default class Footer extends Component {
                   |{" "}
                   <a href="https://www.flaticon.com/" target={"_blank"}>
                     <small>Flaticon</small>
+                  </a>{" "}
+                  |{" "}
+                  <a href="https://responsivevoice.org/" target={"_blank"}>
+                    <small>ResponsiveVoice API</small>
                   </a>
                 </p>
               </div>
@@ -86,7 +90,7 @@ export default class Footer extends Component {
             <div className="row justify-content-center">
               <div className="col-sm-2">
                 <button className="btn btn-link text-white">
-                  <small onClick={this.handleClick}>Terms and Conditions</small>
+                  <small onClick={this.handleClick}>Terms & Conditions</small>
                 </button>
                 <br />
                 <small>© acceso</small>
@@ -108,7 +112,8 @@ export default class Footer extends Component {
                   <p>
                     Please read these Terms and Conditions ("Terms", "Terms and
                     Conditions") carefully before using the Acceso web
-                    application (the "Service").
+                    application (the "Service") developed by Tish Chungoora (the
+                    "Creator").
                   </p>
                   <p>
                     Your access to and use of the Service is conditioned on your
@@ -125,17 +130,18 @@ export default class Footer extends Component {
 
                   <p>
                     The Service may contain links to third-party web sites or
-                    services that are not owned or controlled by Acceso.
+                    services that are not owned or controlled by the Creator.
                   </p>
                   <p>
-                    Acceso has no control over, and assumes no responsibility
-                    for, the content, privacy policies, or practices of any
-                    third party websites or services. You further acknowledge
-                    and agree that Acceso shall not be responsible or liable,
-                    directly or indirectly, for any damage or loss caused or
-                    alleged to be caused by or in connection with use of or
-                    reliance on any such content, goods or services available on
-                    or through any such websites or services.
+                    The Creator has no control over, and assumes no
+                    responsibility for, the content, privacy policies, or
+                    practices of any third party websites or services. You
+                    further acknowledge and agree that the Creator shall not be
+                    responsible or liable, directly or indirectly, for any
+                    damage or loss caused or alleged to be caused by or in
+                    connection with use of or reliance on any such content,
+                    goods or services available on or through any such websites
+                    or services.
                   </p>
                   <p>
                     It is strongly advised you read the terms and conditions and
@@ -149,23 +155,20 @@ export default class Footer extends Component {
                     conflict of law provisions.
                   </p>
                   <p>
-                    Our failure to enforce any right or provision of these Terms
+                    Failure to enforce any right or provision of these Terms
                     will not be considered a waiver of those rights. If any
                     provision of these Terms is held to be invalid or
                     unenforceable by a court, the remaining provisions of these
-                    Terms will remain in effect. These Terms constitute the
-                    entire agreement between us regarding our Service, and
-                    supersede and replace any prior agreements we might have
-                    between us regarding the Service.
+                    Terms will remain in effect.
                   </p>
                   <h3>Changes</h3>
                   <p>
-                    We reserve the right, at our sole discretion, to modify or
-                    replace these Terms at any time. What constitutes a Material
-                    change will be determined at our sole discretion.
+                    The Creator reserves the right, at his sole discretion, to
+                    modify or replace these Terms at any time. What constitutes
+                    a Material change will be determined at his sole discretion.
                   </p>
                   <p>
-                    By continuing to access or use our Service after those
+                    By continuing to access or use the Service after those
                     revisions become effective, you agree to be bound by the
                     revised terms. If you do not agree to the new terms, please
                     stop using the Service.
