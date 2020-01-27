@@ -24,7 +24,7 @@ export default class LoginPage extends Component {
     let email = document.getElementById("email");
     email.value = "j.doe@gmail.com";
     let password = document.getElementById("password");
-    password.value = "833Fw.U7*KsM";
+    password.value = process.env.REACT_APP_TEST_USER_PASSWORD;
     this.setState({
       loginData: { email: email.value, password: password.value }
     });

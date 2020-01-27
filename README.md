@@ -4,7 +4,7 @@ acceso is an open-source web application developed by Tish Chungoora. The app wa
 
 Central to acceso is a Picture Exchange Communication System (PECS) where the application exposes over 570 cards which are the building blocks for composing a conversation board. The board can be adjusted on demand and can be played back in audio form for further reinforcement, communication and learning purposes.
 
-A deployed version of the web application can be accessed ![here](https://acceso.netlify.com/).
+A deployed version of the web application can be accessed [here](https://acceso.netlify.com/).
 
 ![Image of acceso](https://i.imgur.com/ewUGFmI.png)
 
@@ -32,17 +32,17 @@ A deployed version of the web application can be accessed ![here](https://acceso
 
 ## Stack
 
-- Ruby on Rails API, Ancestry gem to manage taxonomical data relationships, JWT gem for user authentication, Active Record ORM and PostgreSQL database for the ![backend](https://github.com/tishchungoora/acceso-backend).
+- Ruby on Rails API, Ancestry gem to manage taxonomical data relationships, JWT gem for user authentication, Active Record ORM and PostgreSQL database for the [backend](https://github.com/tishchungoora/acceso-backend).
 - The backend is deployed to Heroku.
-- React, JavaScript, HTML, CSS, Bootstrap and ResponsiveVoice API for the ![frontend](https://github.com/tishchungoora/acceso-frontend).
+- React, JavaScript, HTML, CSS, Bootstrap and ResponsiveVoice API for the [frontend](https://github.com/tishchungoora/acceso-frontend).
 - The frontend is deployed to Netlify.
 
 ## Acknowledgements
 
-- ![MyPECS.com](http://www.mypecs.com/)
-- ![PECS USA](https://pecsusa.com/)
-- ![Flaticon](https://www.flaticon.com/)
-- ![ResponsiveVoice API](https://responsivevoice.org/)
+- [MyPECS.com](http://www.mypecs.com/)
+- [PECS USA](https://pecsusa.com/)
+- [Flaticon](https://www.flaticon.com/)
+- [ResponsiveVoice API](https://responsivevoice.org/)
 
 ## License
 
