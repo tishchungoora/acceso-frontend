@@ -18,7 +18,7 @@ export default class Home extends Component {
         <div className="row justify-content-center m-2">
           <div className="row text-center">
             <h2>
-              The no. 1 web app for communicating intention and emotion with
+              The no. 1 web app for exchanging ideas, emotion & intention with
               cards
             </h2>
           </div>
@@ -37,8 +37,7 @@ export default class Home extends Component {
               <div className="row justify-content-center">
                 <div className="col-sm-10 mt-2 text-center">
                   <p>
-                    Social workers, parents and carers needing to communicate
-                    intention and emotion with non-verbal autistic individuals.
+                    Social workers, parents and carers who work with non-verbal autistic individuals to help them communicate intention and emotion.
                   </p>
                 </div>
               </div>
