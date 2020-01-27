@@ -75,6 +75,18 @@ footer a:visited {
   color: lightgrey;
 }
 
+footer small {
+  color: lightgrey;
+}
+
+footer small:hover {
+  color: lightgrey;
+}
+
+footer small:visited {
+  color: lightgrey;
+}
+
 /* cards */
 
 .CardCollection .card {
