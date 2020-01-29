@@ -20,7 +20,8 @@ export default class PecsContainer extends Component {
       methodChange,
       methodSwitch,
       displayedCards,
-      selectCard
+      selectCard,
+      loading
     } = this.props;
 
     return (
@@ -56,19 +57,27 @@ export default class PecsContainer extends Component {
           <div className="PecsCardsTitle row justify-content-center">
             <h1>PECS cards</h1>
           </div>
-          <div className="CardsBrowser row justify-content-center">
-            {noSearchResults ? (
-              <p className="lead">
-                Sorry, we couldn't find any matching results. Please try with a
-                different word or filter by category
-              </p>
-            ) : (
-              <CardCollection
-                displayedCards={displayedCards}
-                selectCard={selectCard}
-              />
-            )}
-          </div>
+          {loading ? (
+            <div className="Spinner row  justify-content-center">
+              <div className="spinner-border" role="status">
+                <span className="sr-only">Loading...</span>
+              </div>
+            </div>
+          ) : (
+            <div className="CardsBrowser row justify-content-center">
+              {noSearchResults ? (
+                <p className="lead">
+                  Sorry, we couldn't find any matching results. Please try with
+                  a different word or filter by category
+                </p>
+              ) : (
+                <CardCollection
+                  displayedCards={displayedCards}
+                  selectCard={selectCard}
+                />
+              )}
+            </div>
+          )}
         </div>
       </div>
     );
