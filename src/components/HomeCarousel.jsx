@@ -9,21 +9,21 @@ export default class HomeCarousel extends Component {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={require("../assets/acceso-banner-1.png")}
+              src={require("../assets/acceso-banner-1.jpg")}
               alt="Banner 1"
             />
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={require("../assets/acceso-banner-2.png")}
+              src={require("../assets/acceso-banner-2.jpg")}
               alt="Banner 2"
             />
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={require("../assets/acceso-banner-3.png")}
+              src={require("../assets/acceso-banner-3.jpg")}
               alt="Banner 3"
             />
           </Carousel.Item>
