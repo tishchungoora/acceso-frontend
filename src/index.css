@@ -49,19 +49,6 @@ h6 {
   margin-right: -15px;
 }
 
-#banner img {
-  padding-right: 0px;
-  padding-left: 0px;
-}
-
-#banner p {
-  font-size: 0.75em;
-  display: block;
-  z-index: 1;
-  margin-top: -20px;
-  color: white;
-}
-
 .embed-responsive {
   max-width: 800px;
 }

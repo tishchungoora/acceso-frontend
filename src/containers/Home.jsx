@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Carousel } from "react-bootstrap";
+import HomeCarousel from "../components/HomeCarousel";
 
 export default class Home extends Component {
   render() {
@@ -8,30 +8,8 @@ export default class Home extends Component {
 
     return (
       <div className="Home container-fluid">
-        <div id="banner" className="text-center mb-4">
-          <Carousel>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={require("../assets/acceso-banner-1.png")}
-                alt="First slide"
-              />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={require("../assets/acceso-banner-2.png")}
-                alt="Third slide"
-              />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={require("../assets/acceso-banner-3.png")}
-                alt="Third slide"
-              />
-            </Carousel.Item>
-          </Carousel>
+        <div>
+          <HomeCarousel />
         </div>
         <div className="row justify-content-center m-2">
           <div className="row text-center">
