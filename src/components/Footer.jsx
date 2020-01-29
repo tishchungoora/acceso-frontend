@@ -73,8 +73,8 @@ export default class Footer extends Component {
                     <small>MyPECS.com</small>
                   </a>{" "}
                   |{" "}
-                  <a href="https://pecsusa.com/" target={"_blank"}>
-                    <small>PECS USA</small>
+                  <a href="https://www.gettyimages.co.uk/" target={"_blank"}>
+                    <small>Getty Images</small>
                   </a>{" "}
                   |{" "}
                   <a href="https://www.flaticon.com/" target={"_blank"}>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import HomeCarousel from "../components/HomeCarousel";
 
 export default class Home extends Component {
   render() {
@@ -7,13 +8,8 @@ export default class Home extends Component {
 
     return (
       <div className="Home container-fluid">
-        <div id="banner" className="text-center mb-4">
-          <img
-            className="container-fluid"
-            src={require("../assets/banner.jpeg")}
-            alt="Acceso banner"
-          />
-          <p>Source: https://pecsusa.com/</p>
+        <div>
+          <HomeCarousel />
         </div>
         <div className="row justify-content-center m-2">
           <div className="row text-center">
@@ -37,7 +33,9 @@ export default class Home extends Component {
               <div className="row justify-content-center">
                 <div className="col-sm-10 mt-2 text-center">
                   <p>
-                    Social workers, parents and carers who work with non-verbal autistic individuals to help them communicate intention and emotion.
+                    Social workers, parents and carers who work with non-verbal
+                    autistic individuals to help them communicate intention and
+                    emotion.
                   </p>
                 </div>
               </div>
