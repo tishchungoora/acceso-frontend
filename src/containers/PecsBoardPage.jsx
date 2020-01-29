@@ -15,7 +15,8 @@ export default class PecsBoardPage extends Component {
     methodSwitch: false,
     cardsOnBoard: [],
     played: false,
-    successFired: false
+    successFired: false,
+    loading: true
   };
 
   setCategories = () => {
@@ -30,7 +31,8 @@ export default class PecsBoardPage extends Component {
     API.fetchCards().then(data =>
       this.setState({
         displayedCards: data.sort((a, b) => a.title.localeCompare(b.title)),
-        cards: data
+        cards: data,
+        loading: false
       })
     );
   };
@@ -173,7 +175,9 @@ export default class PecsBoardPage extends Component {
 
   displaySuccessAlert = () => {
     this.setState({ successFired: true });
-    setTimeout(() => {this.setState({successFired: false})}, 4000)
+    setTimeout(() => {
+      this.setState({ successFired: false });
+    }, 4000);
   };
 
   render() {
@@ -186,7 +190,8 @@ export default class PecsBoardPage extends Component {
       methodSwitch,
       cardsOnBoard,
       played,
-      successFired
+      successFired,
+      loading
     } = this.state;
     const { user } = this.props;
     const {
@@ -211,10 +216,12 @@ export default class PecsBoardPage extends Component {
             className="Alert row alert alert-success justify-content-center"
             role="alert"
           >
-            <p>Your board has been successfully created.{" "}
-            <a href="/saved-boards" className="alert-link">
-              Visit your Saved Boards to find it.
-            </a></p>
+            <p>
+              Your board has been successfully created.{" "}
+              <a href="/saved-boards" className="alert-link">
+                Visit your Saved Boards to find it.
+              </a>
+            </p>
           </div>
         ) : (
           <div></div>
@@ -255,6 +262,7 @@ export default class PecsBoardPage extends Component {
             filterCards={filterCards}
             displayedCards={displayedCards}
             selectCard={selectCard}
+            loading={loading}
           />
         </div>
       </div>

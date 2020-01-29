@@ -114,6 +114,13 @@ footer small:visited {
   border-radius: 0.75em 0.75em 0.75em 0.75em;
 }
 
+.Spinner {
+  background-color: lightskyblue;
+  border-radius: 0 0 0.75em 0.75em;
+  margin-top: -0.75em;
+  padding-bottom: 0.75em;
+}
+
 .CardsBrowser {
   background-color: lightskyblue;
   border-radius: 0 0 0.75em 0.75em;
